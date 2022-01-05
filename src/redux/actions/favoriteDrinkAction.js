@@ -4,3 +4,10 @@ export const addFavoriteDrink = (drink) => {
         payload: drink
     }
 }
+
+export const removeFavoriteDrink = (drink) => {
+    return {
+        type: 'REMOVE_FAVORITE_DRINK',
+        payload: drink
+    }
+}
