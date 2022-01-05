@@ -4,14 +4,12 @@ import { addFavoriteDrink, removeFavoriteDrink } from './actions/favoriteDrinkAc
 import { liquorSearchReducer } from './reducers/liquorSearchReducer'
 import { loadDrinkData } from './actions/liquorSearch'
 
-const reducers = {
+const rootReducers = {
     favoriteDrinks: favoriteDrinksReducer, 
     liquorSearch: liquorSearchReducer
 }
 
-const rootReducer = combineReducers(reducers)
-
-const store = createStore(rootReducer)
+const store = createStore(combineReducers(rootReducers))
 
 export default store
     store.subscribe(() => {
