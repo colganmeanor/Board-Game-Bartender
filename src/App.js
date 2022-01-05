@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import React,  { useEffect } from 'react'
+import './App.css';
+import { useDispatch } from 'react-redux'
+import { loadDrinkData } from './redux/actions/liquorSearch.js'
+
+const App = () => {
+  const dispatch = useDispatch()
+  
+  const getData = () => {
+    fetch('https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail')
+      .then(res => res.json())
+        .then(data => console.log(data))
+  }
+  useEffect(() => {
+    getData()
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>we are awesome</h1>
     </div>
   );
 }
