@@ -3,15 +3,29 @@ import React,  { useEffect } from 'react'
 import './App.css';
 import { useDispatch } from 'react-redux'
 import { loadDrinkData } from './redux/actions/liquorSearch.js'
+import { loadGameData } from './redux/actions/boardGame'
 
 const App = () => {
   const dispatch = useDispatch()
   
-  const getData = () => {
-    fetch('https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail')
+  const getDrinkData = () => {
+    return fetch('https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail')
       .then(res => res.json())
-        .then(data => dispatch(loadDrinkData(data)))
   }
+
+  const getGameData = () => {
+    return fetch('https://api.boardgameatlas.com/api/search?name=Catan&pretty=true&client_id=JLBr5npPhV')
+      .then(res => res.json())
+  }
+    
+  const getData = () => {
+    Promise.all([getDrinkData(), getGameData()])
+      .then(data => {
+        dispatch(loadDrinkData(data[0]))
+        dispatch(loadGameData(data[1]))
+      })
+  }
+
   useEffect(() => {
     getData()
   }, [])
