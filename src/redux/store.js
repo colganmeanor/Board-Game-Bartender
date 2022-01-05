@@ -2,11 +2,13 @@ import { combineReducers, createStore } from 'redux'
 import { favoriteDrinksReducer } from './reducers/favoriteDrinkReducer'
 import { addFavoriteDrink, removeFavoriteDrink } from './actions/favoriteDrinkAction'
 import { liquorSearchReducer } from './reducers/liquorSearchReducer'
-import { loadDrinkData } from './actions/liquorSearch'
+import { boardGameReducer } from './reducers/boardGameReducer'
+// import { loadDrinkData } from './actions/liquorSearch'
 
 const rootReducers = {
     favoriteDrinks: favoriteDrinksReducer, 
-    liquorSearch: liquorSearchReducer
+    liquorSearch: liquorSearchReducer,
+    boardGame: boardGameReducer
 }
 
 const store = createStore(combineReducers(rootReducers))
