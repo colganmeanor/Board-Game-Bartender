@@ -1,6 +1,6 @@
 import { createStore } from 'redux'
 import { favoriteDrinksReducer } from './reducers/favoriteDrinkReducer'
-import { addFavoriteDrink } from './actions/favoriteDrinkAction'
+import { addFavoriteDrink, removeFavoriteDrink } from './actions/favoriteDrinkAction'
 
 const store = createStore(favoriteDrinksReducer)
 
@@ -12,3 +12,5 @@ store.subscribe(() => {
 
 store.dispatch(addFavoriteDrink('mojito'))
 store.dispatch(addFavoriteDrink('natty light'))
+
+store.dispatch(removeFavoriteDrink('mojito'))
