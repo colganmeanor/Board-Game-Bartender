@@ -10,7 +10,7 @@ const App = () => {
   const getData = () => {
     fetch('https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail')
       .then(res => res.json())
-        .then(data => console.log(data))
+        .then(data => dispatch(loadDrinkData(data)))
   }
   useEffect(() => {
     getData()

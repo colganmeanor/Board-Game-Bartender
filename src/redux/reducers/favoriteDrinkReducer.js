@@ -17,5 +17,7 @@ export const favoriteDrinksReducer = (state = initialState, action) => {
             return {
                 favoriteDrinks: updatedArray
             }
+        default:
+            return state
     }
 }
