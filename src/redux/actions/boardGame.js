@@ -5,9 +5,9 @@ export const loadGameData = (data) => {
     }
 }
 
-// export const findGame = (data) => {
-//     return {
-//         type: "FIND_GAME",
-//         payload: data
-//     }
-// }
+export const findGame = (data) => {
+    return {
+        type: "FIND_GAME",
+        payload: data
+    }
+}
