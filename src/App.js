@@ -4,6 +4,7 @@ import './App.css';
 import { useDispatch } from 'react-redux'
 import { loadDrinkData } from './redux/actions/liquorSearch.js'
 import { loadGameData } from './redux/actions/boardGame'
+import PairingForm from './Components/PairingForm';
 
 const App = () => {
   const dispatch = useDispatch()
@@ -33,6 +34,7 @@ const App = () => {
   return (
     <div>
       <h1>we are awesome</h1>
+      <PairingForm />
     </div>
   );
 }
