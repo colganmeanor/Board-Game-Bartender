@@ -1,13 +1,15 @@
 
 import React,  { useEffect } from 'react'
 import './App.css';
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { loadDrinkData } from './redux/actions/liquorSearch.js'
 import { loadGameData } from './redux/actions/boardGame'
 import PairingForm from './Components/PairingForm';
 
 const App = () => {
   const dispatch = useDispatch()
+  
+  const games = useSelector(state => state.boardGame.allGamesData.games)
   
   const getDrinkData = () => {
     return fetch('https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail')
@@ -34,7 +36,7 @@ const App = () => {
   return (
     <div>
       <h1>we are awesome</h1>
-      <PairingForm />
+      {games ? <PairingForm /> : <p>Loading</p>}
     </div>
   );
 }
