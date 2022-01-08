@@ -15,6 +15,10 @@ const PairedPage = () => {
         return state.liquorSearch.randomDrink
     })
 
+    const currentDrink = useSelector(state => {
+        return state.favoriteDrinks.currentDrink.drinks
+    })
+
 
 return (
     <section>

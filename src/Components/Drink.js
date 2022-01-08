@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { storeCurrentDrink } from "../redux/actions/favoriteDrinkAction";
 
 const Drink = () => {
 
-    
+    const dispatch = useDispatch()
     
     const drink = useSelector(state => {
         return state.liquorSearch.randomDrink
@@ -12,7 +13,7 @@ const Drink = () => {
     const fetchDrinkData = (id) => {
         return fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`)
         .then(res => res.json())
-        .then(data => console.log('data from fetch call for looking up specific drink by ID', data))
+        .then(data => dispatch(storeCurrentDrink(data.drinks[0])))
     }
 
     useEffect(() => {
