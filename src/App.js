@@ -1,23 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import React,  { useEffect } from 'react'
+import './App.css';
+import { useDispatch, useSelector } from 'react-redux'
+import { loadDrinkData } from './redux/actions/liquorSearch.js'
+import { loadGameData } from './redux/actions/boardGame'
+import PairingForm from './Components/PairingForm';
+
+const App = () => {
+  const dispatch = useDispatch()
+  
+  const games = useSelector(state => state.boardGame.allGamesData.games)
+  
+  const getDrinkData = () => {
+    return fetch('https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail')
+      .then(res => res.json())
+  }
+
+  const getGameData = () => {
+    return fetch('https://api.boardgameatlas.com/api/search?name=Catan&pretty=true&client_id=JLBr5npPhV')
+      .then(res => res.json())
+  }
+    
+  const getData = () => {
+    Promise.all([getDrinkData(), getGameData()])
+      .then(data => {
+        dispatch(loadDrinkData(data[0]))
+        dispatch(loadGameData(data[1]))
+      })
+  }
+
+  useEffect(() => {
+    getData()
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>we are awesome</h1>
+      {games ? <PairingForm /> : <p>Loading</p>}
     </div>
   );
 }
