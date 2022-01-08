@@ -15,13 +15,14 @@ const PairedPage = () => {
         return state.liquorSearch.randomDrink
     })
 
+
 return (
     <section>
-        <main>
+        <main className="paired-page">
             <h2>Your Perfect Pairing!</h2>
-            <div className='pair-components'>
-                {drink ? <Drink /> : null}
-                {game ? <Game /> : null}
+            <div className='paired-components'>
+                {drink && <Drink />}
+                {game && <Game />}
             </div>
             <button>Add to Favorite Pairs!</button>
         </main>

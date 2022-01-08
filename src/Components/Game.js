@@ -3,17 +3,26 @@ import { useSelector } from "react-redux";
 
 const Game = () => {
 
-    const game = useSelector(state => {
+    const gameName = useSelector(state => {
         return state.boardGame.currentGame
     })
 
+    const gamesList = useSelector(state => {
+        return state.boardGame.allGamesData.games
+    })
+
+    const game = gamesList.find((game) => {
+        return game.name === gameName
+    })
+
     return (
-        <div className="paired-section">
-            <h3>{game}</h3>
-            <p>Replace this P element with an img for the selected game</p>
+        <div className="paired-component">
+            <h3>{game.name}</h3>
+            <p>{game.description_preview}</p>
         </div>
     )
-
+    
 }
+// game.description in some cases returns a string with paragraph tags - need to figure out a way to parse this out? 
 
 export default Game
