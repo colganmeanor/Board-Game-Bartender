@@ -3,9 +3,12 @@ import { useSelector, useDispatch } from "react-redux";
 import Drink from "./Drink";
 import Game from "./Game";
 import '../Styles/PairedPage.css'
+import { addFavoriteDrink } from "../redux/actions/favoriteDrinkAction";
 
 
 const PairedPage = () => {
+
+    const dispatch = useDispatch()
 
     const game = useSelector(state => {
         return state.boardGame.currentGame
@@ -16,7 +19,7 @@ const PairedPage = () => {
     })
 
     const currentDrink = useSelector(state => {
-        return state.favoriteDrinks.currentDrink.drinks
+        return state.favoriteDrinks.currentDrink
     })
 
 
@@ -28,7 +31,7 @@ return (
                 {drink && <Drink />}
                 {game && <Game />}
             </div>
-            <button>Add to Favorite Pairs!</button>
+            <button onClick={() => {dispatch(addFavoriteDrink(currentDrink))}}>Add to Favorite Pairs!</button>
         </main>
     </section>
 )
