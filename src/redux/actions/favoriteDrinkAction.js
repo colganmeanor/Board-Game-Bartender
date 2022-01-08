@@ -11,3 +11,10 @@ export const removeFavoriteDrink = (drink) => {
         payload: drink
     }
 }
+
+export const storeCurrentDrink = (drink) => {
+    return {
+        type: 'STORE_CURRENT_DRINK',
+        payload: drink
+    }
+}
