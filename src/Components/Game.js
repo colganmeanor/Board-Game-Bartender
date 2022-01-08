@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import '../Styles/Game.css'
 
 const Game = () => {
 
@@ -18,7 +19,7 @@ const Game = () => {
     return (
         <div className="paired-component">
             <h3>{game.name}</h3>
-            <p>{game.description_preview}</p>
+            <img class="game-image" src={game.image_url} />
         </div>
     )
     

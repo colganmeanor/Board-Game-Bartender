@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { storeCurrentDrink } from "../redux/actions/favoriteDrinkAction";
+import '../Styles/Drink.css'
 
 const Drink = () => {
 
@@ -23,8 +24,7 @@ const Drink = () => {
     return (
         <div className="paired-component">
             <h3>{drink.strDrink}</h3>
-            <p>Replace this P element with an img for the selected drink</p>
-            {/* <img src={drink.strDrinkThumb} /> */}
+            <img class="drink-image" src={drink.strDrinkThumb} />
         </div>
     )
 
