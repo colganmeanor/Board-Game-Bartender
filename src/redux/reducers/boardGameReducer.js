@@ -1,5 +1,6 @@
 export const initialState = {
-    allGamesData: []
+    allGamesData: [],
+    currentGame: {}
 }
 
 export const boardGameReducer = (state = initialState, action) => {
@@ -8,6 +9,11 @@ export const boardGameReducer = (state = initialState, action) => {
             return {
                 allGamesData: action.payload
             }
+        case 'FIND_GAME':
+            return {
+                ...state,
+                currentGame: action.payload
+            }    
         default:
             return state
     }
