@@ -4,3 +4,17 @@ export const loadDrinkData = (data) => {
         payload: data
     }
 }
+
+export const setLiquorType = (drink) => {
+    return {
+        type: 'SET_LIQUOR_TYPE',
+        payload: drink
+    }
+}
+
+export const setRandomDrink = (randomDrink) => {
+    return {
+        type: 'SET_RANDOM_DRINK',
+        payload: randomDrink
+    }
+}

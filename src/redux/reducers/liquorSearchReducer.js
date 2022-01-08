@@ -1,16 +1,26 @@
 
-
-
 export const initialState = {
-    allDrinksData: []
+    allDrinksData: [],
+    liquorSearchWord: '',
+    randomDrink: {}
 }
 
 export const liquorSearchReducer = (state = initialState, action) => {
     switch(action.type) {
         case 'LOAD_DRINK_DATA':
-        return {
-            allDrinksData: [...state.allDrinksData, action.payload]
-        }
+            return {
+                allDrinksData: [...state.allDrinksData, action.payload]
+            }
+        case 'SET_LIQUOR_TYPE':
+            return {
+                ...state,
+                liquorSearchWord: action.payload
+            }
+        case 'SET_RANDOM_DRINK':
+            return {
+                ...state,
+                randomDrink: action.payload
+            }
         default:
             return state
     }
