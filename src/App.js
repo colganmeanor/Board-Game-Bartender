@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { loadDrinkData } from './redux/actions/liquorSearch.js'
 import { loadGameData } from './redux/actions/boardGame'
 import PairingForm from './Components/PairingForm';
+import PairedPage from './Components/PairedPage';
 import Header from './Components/Header'
 
 const App = () => {
@@ -40,6 +41,7 @@ const App = () => {
         
         <main className='landing-page'>
           {games ? <PairingForm /> : <p>Loading</p>}
+          <PairedPage />
         </main>
       
     </div>
