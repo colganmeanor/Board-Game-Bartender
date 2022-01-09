@@ -4,10 +4,13 @@
     align-items: center;
     width: auto;
     height: auto;
+    background-color: #19435A;
+    justify-content: center;
+   
 }
 
 .paired-component {
-    border: solid black;
+    border-radius: 10px;;
     background: white;
     width: 45%;
     align-content: center;
@@ -18,4 +21,37 @@
     flex-direction: row;
     justify-content: space-between;
     align-content: space-between;
+}
+
+.perfect-pairing-title {
+    color: white;
+    font-family: 'Oooh Baby';
+    font-size: 72px;
+    margin-bottom: 24px;
+}
+
+.add-favorite-button {
+    border: none;
+    font-family: 'Julius Sans One';
+    height: 64px;
+    background-color: teal;
+    color: white;
+    font-size: 24px;
+    border-radius: 10px;
+    width: 200px;
+    padding: .5%;
+    margin-top: 2%;
+}
+
+.add-favorite-button:hover {
+    background-color: white;
+    color: #008080;
+    font-weight: 600;
+    transform: scale(1.2);
+}
+
+.plus-sign {
+    color: white;
+    margin: auto 0;
+    font-size: 48px;
 }

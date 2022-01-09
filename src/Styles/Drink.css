@@ -4,6 +4,22 @@
 } */
 
 .drink-image {
-    height: auto;
     width: 40%;
+    border-radius: 50%;;
+    padding: 2.4%;
+}
+
+.drink-name {
+    font-family: 'Julius Sans One';
+    text-align: center;
+    font-size: 36px;
+    margin: 12px auto;
+}
+
+.drink-info {
+    display: flex;
+}
+
+.instructions {
+    margin-left: 50px;
 }

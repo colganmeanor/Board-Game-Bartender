@@ -23,8 +23,14 @@ const Drink = () => {
 
     return (
         <div className="paired-component">
-            <h3>{drink.strDrink}</h3>
-            <img class="drink-image" src={drink.strDrinkThumb} />
+            <h3 className='drink-name'>{drink.strDrink}</h3>
+            <section className='drink-info'>
+                <img className="drink-image" src={drink.strDrinkThumb} />
+                    <aside className='instructions'>
+                        <p>Ingredients</p>
+                        <p>Instructions</p>
+                    </aside>
+            </section>
         </div>
     )
 
