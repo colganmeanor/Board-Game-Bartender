@@ -32,7 +32,28 @@ const Drink = () => {
             return ingredients
         }, [])
     }
- 
+    const getMeasures = (keys) => {
+        return keys.reduce((measures, each) => {
+            if (each.includes('strMeasure') && drinkSpecifics[each]) {
+                measures.push(drinkSpecifics[each])
+            }
+            return measures
+        }, [])
+    }
+
+    const makeTheSameLength = (ingredients, measures) => {
+        if (ingredients.length === measures.length) {
+            return {ingredients, measures}
+        } else if (ingredients.length > measures.length) {
+            let difference = ingredients.length - measures.length
+            for (let i = 0; i < difference; i++) {
+                measures.push('Amount not specified. Personal preference.')
+            }
+            return {ingredients, measures}
+        } else {
+            return {ingredients: [], measures: []}
+        }
+    }
 
     const createIngredientAmount = (drinkSpecifics) => {
         const drinkKeys = Object.keys(drinkSpecifics)
