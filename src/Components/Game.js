@@ -30,6 +30,5 @@ const Game = () => {
     )
     
 }
-// game.description in some cases returns a string with paragraph tags - need to figure out a way to parse this out? 
 
 export default Game

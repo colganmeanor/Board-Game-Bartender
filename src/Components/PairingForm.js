@@ -1,7 +1,8 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { findGame } from '../redux/actions/boardGame';
-import { setLiquorType, setRandomDrink } from '../redux/actions/liquorSearch'
+import { setLiquorType } from '../redux/actions/liquorSearch'
+import { storeCurrentDrink } from '../redux/actions/favoriteDrinkAction';
 import '../Styles/PairingForm.css'
 
 const PairingForm = () => {
@@ -23,7 +24,9 @@ const PairingForm = () => {
             .then(res => res.json())
                 .then(data => {
                     let randomNum = Math.floor(Math.random() * data.drinks.length)
-                    dispatch(setRandomDrink(data.drinks[randomNum]))
+                    fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${data.drinks[randomNum].idDrink}`)
+                        .then(res => res.json())
+                            .then(data => dispatch(storeCurrentDrink(data.drinks[0])))
                 })
     }
 

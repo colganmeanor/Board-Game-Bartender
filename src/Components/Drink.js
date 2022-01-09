@@ -1,34 +1,67 @@
-import React, { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { storeCurrentDrink } from "../redux/actions/favoriteDrinkAction";
+import React from 'react';
+import { useSelector } from 'react-redux';
 import '../Styles/Drink.css'
 
 const Drink = () => {
 
-    const dispatch = useDispatch()
-    
-    const drink = useSelector(state => {
-        return state.liquorSearch.randomDrink
+    const currentDrink = useSelector(state => {
+        return state.favoriteDrinks.currentDrink
     })
 
-    const fetchDrinkData = (id) => {
-        return fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`)
-        .then(res => res.json())
-        .then(data => dispatch(storeCurrentDrink(data.drinks[0])))
+    const getIngredients = (keys) => {
+        return keys.reduce((ingredients, each) => {
+            if (each.includes('strIngredient') && currentDrink[each]) {
+                ingredients.push(currentDrink[each])
+            }
+            return ingredients
+        }, [])
     }
 
-    useEffect(() => {
-        fetchDrinkData(drink.idDrink)
-    }, [])
+    const getMeasures = (keys) => {
+        return keys.reduce((measures, each) => {
+            if (each.includes('strMeasure') && currentDrink[each]) {
+                measures.push(currentDrink[each])
+            }
+            return measures
+        }, [])
+    }
+
+    const makeTheSameLength = (ingredients, measures) => {
+        if (ingredients.length === measures.length) {
+            return {ingredients, measures}
+        } else if (ingredients.length > measures.length) {
+            let difference = ingredients.length - measures.length
+            for (let i = 0; i < difference; i++) {
+                measures.push('')
+            }
+            return {ingredients, measures}
+        } else {
+            return {ingredients: [], measures: []}
+        }
+    }
+
+    const createIngredientAmount = (currentDrink) => {
+        const drinkKeys = Object.keys(currentDrink)
+        const ingredients = getIngredients(drinkKeys)
+        const measures = getMeasures(drinkKeys)
+        return (makeTheSameLength(ingredients, measures))
+    }
+
+    const recipe = createIngredientAmount(currentDrink)
+
+    const ingredientsList = recipe.ingredients.map((ingredient, index) => {
+        return (
+            <p>{`${recipe.measures[index]} ${ingredient}`}</p>
+        )
+    })
 
     return (
         <div className="paired-component">
-            <h3 className='drink-name'>{drink.strDrink}</h3>
+            <h3 className='drink-name'>{currentDrink.strDrink}</h3>
             <section className='drink-info'>
-                <img className="drink-image" src={drink.strDrinkThumb} />
+                <img className="drink-image" src={currentDrink.strDrinkThumb} />
                 <aside className='drink-specs'>
-                    <p>Ingredients</p>
-                    <p>Instructions</p>
+                    {ingredientsList}
                 </aside>
             </section>
         </div>
