@@ -1,6 +1,6 @@
 export const initialState = {
     allGamesData: [],
-    currentGame: {}
+    currentGame: ''
 }
 
 export const boardGameReducer = (state = initialState, action) => {

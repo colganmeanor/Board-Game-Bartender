@@ -1,0 +1,21 @@
+.paired-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    height: auto;
+}
+
+.paired-component {
+    border: solid black;
+    background: white;
+    width: 45%;
+    align-content: center;
+}
+
+.paired-components {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: space-between;
+}

@@ -1,0 +1,51 @@
+.loading-page-bottom {
+    display: flex;
+    align-items: center;
+}
+
+.dummy-image {
+    background-color: pink;
+    margin: 8% 0 0 18%;
+    width: 20vw;
+    height: 20vw;
+}
+
+.game-liquor-input {
+    display: flex;
+    flex-direction: column;
+    margin-left: 16%;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3%;
+}
+
+.game-input,
+.liquor-input {
+    display: flex;
+    flex-direction: column;
+    padding: 1%;
+    width: 15vw; 
+}
+
+.liquor-dropdown,
+.game-dropdown, 
+.pair-button {
+    border: none;
+    border-radius: 15px;
+}
+
+.pair-button {
+    background-color: teal;
+    color: white;
+    font-size: 16px;
+    padding: 6%;
+    width: 10vw;
+}
+
+
+.liquor-dropdown,
+.game-dropdown {
+    height: 4vh;
+    margin-bottom: 24%;
+    padding: 3%;
+}
