@@ -60,9 +60,9 @@ const Drink = () => {
             <h3 className='drink-name'>{currentDrink.strDrink}</h3>
             <section className='drink-info'>
                 <img className="drink-image" src={currentDrink.strDrinkThumb} />
-                    <aside className='instructions'>
-                        {ingredientsList}
-                    </aside>
+                <aside className='drink-specs'>
+                    {ingredientsList}
+                </aside>
             </section>
         </div>
     )
