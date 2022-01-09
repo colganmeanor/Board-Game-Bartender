@@ -19,7 +19,13 @@ const Game = () => {
     return (
         <div className="paired-component">
             <h3 className='game-name'>{game.name}</h3>
-            <img className="game-image" src={game.image_url} />
+            <section className='game-info'>
+                <img className="game-image" src={game.image_url} /> 
+                <aside className='game-specs'>
+                    <p>Players:  - </p>
+                    <p>Average Play Time: </p>
+                </aside>
+            </section>
         </div>
     )
     
