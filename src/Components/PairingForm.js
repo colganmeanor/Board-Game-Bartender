@@ -29,7 +29,10 @@ const PairingForm = () => {
 
     return (    
         <div className='loading-page-bottom'>
-            <div className='dummy-image'>dummy image</div>
+            <div className='circular-image'>
+            <img src={require('../assets/games-drinks-friends.jpeg')} />
+            </div>
+            
             <form className='game-liquor-input'>
                 <label htmlFor='game-choice' className='game-input'>
                     
@@ -53,7 +56,8 @@ const PairingForm = () => {
                     </datalist>
 
                 </label>
-                <button className='pair-button' onClick={(event) => findRandomDrink(event)}>Pair</button>
+                <button className='pair-button' onClick={(event) => findRandomDrink(event)}><span>Pair</span></button>
+                <button className='favorites-button'>Favorites</button>
             </form>
 
         </div>
