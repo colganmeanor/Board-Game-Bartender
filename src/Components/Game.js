@@ -18,8 +18,8 @@ const Game = () => {
 
     return (
         <div className="paired-component">
-            <h3>{game.name}</h3>
-            <img class="game-image" src={game.image_url} />
+            <h3 className='game-name'>{game.name}</h3>
+            <img className="game-image" src={game.image_url} />
         </div>
     )
     

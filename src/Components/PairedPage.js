@@ -20,16 +20,18 @@ const PairedPage = () => {
 
     return (
         <section>
-            <main className='paired-page'>
-                <h2>Your Perfect Pairing!</h2>
+            <main className="paired-page">
+                <h2 className='perfect-pairing-title'>Your Perfect Pairing!</h2>
                 <div className='paired-components'>
-                    {currentDrink && <Drink />}
                     {game && <Game />}
+                    <p className='plus-sign'>+</p>
+                    {currentDrink && <Drink />}
                 </div>
-                <button onClick={() => {dispatch(addFavoriteDrink(currentDrink))}}>Add to Favorite Pairs!</button>
+                <button className='add-favorite-button'onClick={() => {dispatch(addFavoriteDrink(currentDrink))}}>Add Drink to Favorites!</button>
             </main>
         </section>
     )
+
 
 }
 
