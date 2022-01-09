@@ -8,14 +8,29 @@
 .heading-section {
     /* border: 2px solid green; */
     flex-direction: column;
+    height: 232px;
 }
 
 .title {
-    font-size: 66px;
-    margin: 3% 0 0 16%;
+    font-family: 'Julius Sans One';
+    font-size: 96px;
+    font-weight: 400;
+    margin: 32px auto 0;
 }
 
 .slogan {
-    font-size: 36px;
-    margin-left: 24%;
+    font-family: 'Oooh Baby';
+    font-size: 50px;
+    margin-left: 20%;
+    margin-top: 8px;
+}
+
+.cocktail-icon {
+    width: 180px;
+    height: 80px;
+    margin-left: 40px;;
+}
+
+.slogan-icon {
+    display: flex;
 }

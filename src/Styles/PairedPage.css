@@ -1,21 +1,49 @@
 .paired-page {
+    align-items: center;
+    background-color: #19435A;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    width: auto;
     height: auto;
-}
-
-.paired-component {
-    border: solid black;
-    background: white;
-    width: 45%;
-    align-content: center;
+    justify-content: center;
+    width: auto;
 }
 
 .paired-components {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    align-content: space-between;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.perfect-pairing-title {
+    color: white;
+    font-family: 'Oooh Baby';
+    font-size: 72px;
+    margin-bottom: 24px;
+}
+
+.add-favorite-button {
+    background-color: teal;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-family: 'Julius Sans One';
+    font-size: 24px;
+    height: 64px;
+    margin: 1.6% 0 2%;
+    padding: .5%;
+    width: 200px;
+}
+
+.add-favorite-button:hover {
+    background-color: white;
+    color: #008080;
+    font-weight: 600;
+    transform: scale(1.2);
+}
+
+.plus-sign {
+    color: white;
+    font-size: 48px;
+    margin: auto 0;
 }

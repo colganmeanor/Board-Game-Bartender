@@ -18,12 +18,17 @@ const Game = () => {
 
     return (
         <div className="paired-component">
-            <h3>{game.name}</h3>
-            <img class="game-image" src={game.image_url} />
+            <h3 className='game-name'>{game.name}</h3>
+            <section className='game-info'>
+                <img className="game-image" src={game.image_url} /> 
+                <aside className='game-specs'>
+                    <p>Players:  - </p>
+                    <p>Average Play Time: </p>
+                </aside>
+            </section>
         </div>
     )
     
 }
-// game.description in some cases returns a string with paragraph tags - need to figure out a way to parse this out? 
 
 export default Game

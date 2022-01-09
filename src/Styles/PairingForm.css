@@ -1,22 +1,14 @@
 .loading-page-bottom {
     display: flex;
-    align-items: center;
-}
-
-.dummy-image {
-    background-color: pink;
-    margin: 8% 0 0 18%;
-    width: 20vw;
-    height: 20vw;
 }
 
 .game-liquor-input {
+    align-items: center;
     display: flex;
     flex-direction: column;
-    margin-left: 16%;
-    align-items: center;
     justify-content: center;
-    margin-top: 3%;
+    margin-left: 14%;
+    margin-top: 2%;
 }
 
 .game-input,
@@ -24,28 +16,59 @@
     display: flex;
     flex-direction: column;
     padding: 1%;
-    width: 15vw; 
+    width: 298px; 
 }
 
 .liquor-dropdown,
 .game-dropdown, 
-.pair-button {
+.pair-button,
+.favorites-button {
     border: none;
-    border-radius: 15px;
+    border-radius: 10px;
+    font-family: 'Julius Sans One';
+    font-size: 16px;
+    height: 48px;
+    margin-bottom: 48px;
+    padding: 2%;
+    text-align: center;
+    transition: all .2s ease-in-out;
 }
 
-.pair-button {
+.pair-button,
+.favorites-button {
     background-color: teal;
     color: white;
-    font-size: 16px;
-    padding: 6%;
-    width: 10vw;
+    font-size: 24px;
 }
 
+.pair-button {
+    width: 120px;
+}
 
-.liquor-dropdown,
-.game-dropdown {
-    height: 4vh;
-    margin-bottom: 24%;
-    padding: 3%;
+.favorites-button {
+    width: 156px;
+}
+
+.pair-button:hover,
+.favorites-button:hover {
+    background-color: white;
+    color: #008080;
+    font-weight: 600;
+    transform: scale(1.2);
+}
+
+.circular-image { 
+    border-radius: 50%; 
+    height: 480px; 
+    margin-left: 204px;
+    margin-top: 24px;
+    overflow: hidden; 
+    position: relative; 
+    width: 480px; 
+} 
+
+.circular-image img { 
+    height: auto; 
+    width: 100%; 
+    
 }

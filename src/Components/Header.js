@@ -5,7 +5,10 @@ const Header = () => {
     return (
         <header className='heading-section'>
             <h1 className='title'>Board Game Bartender</h1>
-            <p className='slogan'>...we'll make the decisions for you!</p>
+            <div className='slogan-icon'>
+                <p className='slogan'>we'll take decision making off your plate ...</p>
+                <img src={require('../assets/cocktail-glasses.png')} className='cocktail-icon'/>
+            </div>
         </header>
     )
 }
