@@ -10,6 +10,7 @@
     border: solid black;
     background: white;
     width: 45%;
+    align-content: center;
 }
 
 .paired-components {

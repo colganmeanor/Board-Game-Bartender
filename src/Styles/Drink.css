@@ -1,0 +1,9 @@
+/* .drink-image-container {
+    width: fit-content;
+    height: fit-content;
+} */
+
+.drink-image {
+    height: auto;
+    width: 40%;
+}
