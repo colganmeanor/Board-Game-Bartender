@@ -7,11 +7,10 @@ import { loadGameData } from './redux/actions/boardGame'
 import PairingForm from './Components/PairingForm';
 import PairedPage from './Components/PairedPage';
 import Header from './Components/Header'
-
+import { Routes, Route } from 'react-router-dom'
 
 const App = () => {
   const dispatch = useDispatch()
-  
   const games = useSelector(state => state.boardGame.allGamesData.games)
   
   const getDrinkData = () => {
@@ -39,10 +38,11 @@ const App = () => {
   return (
     <div>
         <Header />
-        
         <main className='landing-page'>
-          {games ? <PairingForm /> : <p>Loading</p>}
-          <PairedPage />
+          <Routes>
+            <Route path='/' element={games ? <PairingForm /> : <p>Loading</p>}/>
+            <Route path='/:id' element={<PairedPage />}/>
+          </Routes>
         </main>
       
     </div>

@@ -4,6 +4,7 @@ import { findGame } from '../redux/actions/boardGame';
 import { setLiquorType } from '../redux/actions/liquorSearch'
 import { storeCurrentDrink } from '../redux/actions/favoriteDrinkAction';
 import '../Styles/PairingForm.css'
+import { Link } from 'react-router-dom'
 
 const PairingForm = () => {
 
@@ -59,7 +60,10 @@ const PairingForm = () => {
                     </datalist>
 
                 </label>
-                <button className='pair-button' onClick={(event) => findRandomDrink(event)}><span>Pair</span></button>
+                <Link to='/9665'>
+                    <button className='pair-button' onClick={(event) => findRandomDrink(event)}><span>Pair</span></button>
+                </Link>
+                
                 <button className='favorites-button'>Favorites</button>
             </form>
 

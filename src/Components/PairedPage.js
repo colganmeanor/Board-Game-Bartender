@@ -6,6 +6,7 @@ import '../Styles/PairedPage.css'
 import { addFavoriteDrink } from '../redux/actions/favoriteDrinkAction';
 
 
+
 const PairedPage = () => {
 
     const dispatch = useDispatch()
@@ -19,19 +20,18 @@ const PairedPage = () => {
     })
 
     return (
-        <section>
-            <main className="paired-page">
-                <h2 className='perfect-pairing-title'>Your Perfect Pairing!</h2>
-                <div className='paired-components'>
-                    {game && <Game />}
-                    <p className='plus-sign'>+</p>
-                    {currentDrink && <Drink />}
-                </div>
-                <button className='add-favorite-button'onClick={() => {dispatch(addFavoriteDrink(currentDrink))}}>Add Drink to Favorites!</button>
-            </main>
-        </section>
+            <section>
+                <main className="paired-page">
+                    <h2 className='perfect-pairing-title'>Your Perfect Pairing!</h2>
+                    <div className='paired-components'>
+                        {game && <Game />}
+                        <p className='plus-sign'>+</p>
+                        {currentDrink && <Drink />}
+                    </div>
+                    <button className='add-favorite-button'onClick={() => {dispatch(addFavoriteDrink(currentDrink))}}>Add Drink to Favorites!</button>
+                </main>
+            </section>
     )
-
 
 }
 
