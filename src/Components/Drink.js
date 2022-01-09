@@ -1,41 +1,26 @@
-import React, { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { storeCurrentDrink } from "../redux/actions/favoriteDrinkAction";
+import React from 'react';
+import { useSelector } from 'react-redux';
 import '../Styles/Drink.css'
 
 const Drink = () => {
 
-    const dispatch = useDispatch()
-    
-    const drink = useSelector(state => {
-        return state.liquorSearch.randomDrink
+    const currentDrink = useSelector(state => {
+        return state.favoriteDrinks.currentDrink
     })
-
-    const fetchDrinkData = (id) => {
-        return fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`)
-        .then(res => res.json())
-            .then(data => dispatch(storeCurrentDrink(data.drinks[0])))
-                .then(data => createIngredientAmount())
-    }
-
-    useEffect(() => {
-        fetchDrinkData(drink.idDrink)
-    }, [])
-
-    let drinkSpecifics = useSelector(state => state.favoriteDrinks.currentDrink)
 
     const getIngredients = (keys) => {
         return keys.reduce((ingredients, each) => {
-            if (each.includes('strIngredient') && drinkSpecifics[each]) {
-                ingredients.push(drinkSpecifics[each])
+            if (each.includes('strIngredient') && currentDrink[each]) {
+                ingredients.push(currentDrink[each])
             }
             return ingredients
         }, [])
     }
+
     const getMeasures = (keys) => {
         return keys.reduce((measures, each) => {
-            if (each.includes('strMeasure') && drinkSpecifics[each]) {
-                measures.push(drinkSpecifics[each])
+            if (each.includes('strMeasure') && currentDrink[each]) {
+                measures.push(currentDrink[each])
             }
             return measures
         }, [])
@@ -47,7 +32,7 @@ const Drink = () => {
         } else if (ingredients.length > measures.length) {
             let difference = ingredients.length - measures.length
             for (let i = 0; i < difference; i++) {
-                measures.push('Amount not specified. Personal preference.')
+                measures.push('')
             }
             return {ingredients, measures}
         } else {
@@ -55,18 +40,26 @@ const Drink = () => {
         }
     }
 
-    const createIngredientAmount = (drinkSpecifics) => {
-        const drinkKeys = Object.keys(drinkSpecifics)
+    const createIngredientAmount = (currentDrink) => {
+        const drinkKeys = Object.keys(currentDrink)
         const ingredients = getIngredients(drinkKeys)
         const measures = getMeasures(drinkKeys)
-        console.log(makeTheSameLength(ingredients, measures))
+        return (makeTheSameLength(ingredients, measures))
     }
 
+    const recipe = createIngredientAmount(currentDrink)
+
+    const ingredientsList = recipe.ingredients.map((ingredient, index) => {
+        return (
+            <p>{`${recipe.measures[index]} ${ingredient}`}</p>
+        )
+    })
+
     return (
-        <div className="paired-component">
-            <h3>{drink.strDrink}</h3>
-            <img class="drink-image" src={drink.strDrinkThumb} />
-            {drinkSpecifics ? <p>current drink is set</p> : <p>Not yet loaded current drink</p>}
+        <div className='paired-component'>
+            <h3>{currentDrink.strDrink}</h3>
+            <img class='drink-image' src={currentDrink.strDrinkThumb} />
+            {ingredientsList}
         </div>
     )
 
