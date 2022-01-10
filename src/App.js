@@ -2,12 +2,14 @@
 import React,  { useEffect } from 'react'
 import './App.css';
 import { useDispatch, useSelector } from 'react-redux'
-import { loadDrinkData } from './redux/actions/liquorSearch.js'
+// import { loadDrinkData } from './redux/actions/liquorSearch.js'
 import { loadGameData } from './redux/actions/boardGame'
-import PairingForm from './Components/PairingForm';
-import PairedPage from './Components/PairedPage';
+import PairingForm from './Components/PairingForm'
+import PairedPage from './Components/PairedPage'
 import Header from './Components/Header'
+import Loading from './Components/Loading'
 import { Routes, Route } from 'react-router-dom'
+import apiCalls from './apiCalls'
 
 const App = () => {
   const dispatch = useDispatch()
@@ -18,11 +20,11 @@ const App = () => {
   //     .then(res => res.json())
   // }
 
-  const getGameData = () => {
-    return fetch('https://api.boardgameatlas.com/api/search?name=Catan&pretty=true&client_id=JLBr5npPhV')
-      .then(res => res.json())
-        .then(data => dispatch(loadGameData(data)))
-  }
+  // const getGameData = () => {
+  //   return fetch('https://api.boardgameatlas.com/api/search?name=Catan&pretty=true&client_id=JLBr5npPhV')
+  //     .then(res => res.json())
+  //     .then(data => dispatch(loadGameData(data)))
+  // }
     
   // const getData = () => {
   //   Promise.all([getDrinkData(), getGameData()])
@@ -33,7 +35,8 @@ const App = () => {
   // }
 
   useEffect(() => {
-    getGameData()
+    apiCalls.getGameData()
+      .then(data => dispatch(loadGameData(data)))
   }, [])
 
   return (
@@ -41,8 +44,8 @@ const App = () => {
         <Header />
         <main className='landing-page'>
           <Routes>
-            <Route path='/' element={games ? <PairingForm /> : <p>Loading</p>}/>
-            <Route path='/:id' element={<PairedPage />} />
+            <Route path='/' element={games ? <PairingForm /> : <Loading />}/>
+            <Route path='/:movieId/:drinkId' element={<PairedPage />} />
             {/* <Route path='/favorites' element={<Favorites />} /> */}
           </Routes>
         </main>
