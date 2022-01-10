@@ -45,7 +45,7 @@ const App = () => {
         <main className='landing-page'>
           <Routes>
             <Route path='/' element={games ? <PairingForm /> : <Loading />}/>
-            <Route path='/:movieId/:drinkId' element={<PairedPage />} />
+            <Route path='/:gameId/:drinkId' element={<PairedPage />} />
             {/* <Route path='/favorites' element={<Favorites />} /> */}
           </Routes>
         </main>

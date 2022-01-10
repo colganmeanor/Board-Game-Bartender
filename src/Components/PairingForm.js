@@ -1,8 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { findGame } from '../redux/actions/boardGame';
+import { setGameName } from '../redux/actions/boardGame';
 import { setLiquorType } from '../redux/actions/liquorSearch'
-import { storeCurrentDrink } from '../redux/actions/favoriteDrinkAction';
 import '../Styles/PairingForm.css'
 // import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router';
@@ -14,7 +13,7 @@ const PairingForm = () => {
 
     const games = useSelector(state => state.boardGame.allGamesData.games)
     const type = useSelector(state => state.liquorSearch.liquorSearchWord)
-    const gameName = useSelector(state => state.boardGame.currentGame)
+    const gameName = useSelector(state => state.boardGame.currentGameName)
 
     const gameNames = games.map((game) => {
         return (
@@ -22,20 +21,32 @@ const PairingForm = () => {
         )
     })
 
+    // const findRandomDrink = (event) => {
+    //     event.preventDefault()
+    //     fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${type}`)
+    //         .then(res => res.json())
+    //             .then(data => {
+    //                 let randomNum = Math.floor(Math.random() * data.drinks.length)
+    //                 fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${data.drinks[randomNum].idDrink}`)
+    //                     .then(res => res.json())
+    //                     .then(data => {
+    //                         dispatch(storeCurrentDrink(data.drinks[0]))
+    //                         const gameObj = games.find(game => game.name === gameName)
+    //                         navigate(`/${gameObj.id}/${data.drinks[0].idDrink}`)
+    //                     })
+    //             })
+    // }
     const findRandomDrink = (event) => {
         event.preventDefault()
         fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${type}`)
             .then(res => res.json())
-                .then(data => {
-                    let randomNum = Math.floor(Math.random() * data.drinks.length)
-                    fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${data.drinks[randomNum].idDrink}`)
-                        .then(res => res.json())
-                        .then(data => {
-                            dispatch(storeCurrentDrink(data.drinks[0]))
-                            const gameObj = games.find(game => game.name === gameName)
-                            navigate(`/${gameObj.id}+${data.drinks[0].idDrink}`)
-                        })
-                })
+            .then(data => {
+                let randomNum = Math.floor(Math.random() * data.drinks.length)
+                const drinkObj = data.drinks[randomNum]
+                const gameObj = games.find(game => game.name === gameName)
+                console.log(gameName)
+                navigate(`/${gameObj.id}/${drinkObj.idDrink}`)
+            })
     }
 
     return (    
@@ -47,7 +58,7 @@ const PairingForm = () => {
             <form className='game-liquor-input'>
                 <label htmlFor='game-choice' className='game-input'>
                     
-                    <input className='game-dropdown' id='game-choice' placeholder='Choose Your Game!' list='games' onChange={(event) => dispatch(findGame(event.target.value))}/>
+                    <input className='game-dropdown' id='game-choice' placeholder='Choose Your Game!' list='games' onChange={(event) => dispatch(setGameName(event.target.value))}/>
                         <datalist id='games'>
                             {gameNames}
                         </datalist>
