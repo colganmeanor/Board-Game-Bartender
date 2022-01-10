@@ -12,3 +12,10 @@ export const findGame = (data) => {
     }
 }
 
+export const setGameName = (data) => {
+    return {
+        type: "SET_GAME_NAME",
+        payload: data
+    }
+}
+

@@ -1,5 +1,3 @@
-// import { addFavoriteDrink } from '../actions/favoriteDrinkAction'
-
 const initialState = {
     favoriteDrinks: [],
     currentDrink: {}
