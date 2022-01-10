@@ -1,7 +1,7 @@
 const apiCalls = {
 
     getGameData: () => {
-        return fetch('https://api.boardgameatlas.com/api/search?name=Catan&pretty=true&client_id=JLBr5npPhV')
+        return fetch('https://api.boardgameatlas.com/api/search?limit=100&pretty=true&client_id=YWBLPm0lyY')
             .then(res => res.json())
     },
 
