@@ -12,11 +12,6 @@ import { findGame } from '../redux/actions/boardGame'
 const PairedPage = () => {
 
     const { gameId, drinkId } = useParams()
-    // if the params match state then display
-    // otherwise refetch and dispatch and then display
-    // let randomNum = Math.floor(Math.random() * data.drinks.length)
-    // const drinkObj = data.drinks[randomNum]
-    // const gameObj = games.find(game => game.name === gameName)
 
     const dispatch = useDispatch()
 
@@ -28,9 +23,6 @@ const PairedPage = () => {
         return state.favoriteDrinks.currentDrink
     })
 
-    // const games = useSelector(state => {
-    //     return state.boardGame.allGamesData.games
-    // })
     const findSpecificGame = (list) => {
         return list.find(game => game.id === gameId)
     }

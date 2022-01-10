@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setGameName } from '../redux/actions/boardGame';
 import { setLiquorType } from '../redux/actions/liquorSearch'
 import '../Styles/PairingForm.css'
-// import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router';
 
 const PairingForm = () => {
@@ -21,21 +20,6 @@ const PairingForm = () => {
         )
     })
 
-    // const findRandomDrink = (event) => {
-    //     event.preventDefault()
-    //     fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${type}`)
-    //         .then(res => res.json())
-    //             .then(data => {
-    //                 let randomNum = Math.floor(Math.random() * data.drinks.length)
-    //                 fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${data.drinks[randomNum].idDrink}`)
-    //                     .then(res => res.json())
-    //                     .then(data => {
-    //                         dispatch(storeCurrentDrink(data.drinks[0]))
-    //                         const gameObj = games.find(game => game.name === gameName)
-    //                         navigate(`/${gameObj.id}/${data.drinks[0].idDrink}`)
-    //                     })
-    //             })
-    // }
     const findRandomDrink = (event) => {
         event.preventDefault()
         fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${type}`)

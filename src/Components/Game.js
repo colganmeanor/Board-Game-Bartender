@@ -8,14 +8,6 @@ const Game = () => {
         return state.boardGame.currentGame
     })
 
-    // const gamesList = useSelector(state => {
-    //     return state.boardGame.allGamesData.games
-    // })
-
-    // const game = gamesList.find((game) => {
-    //     return game.name === gameName
-    // })
-
     return (
         <div className="paired-component">
             <h3 className='game-name'>{gameObj.name}</h3>
@@ -29,7 +21,6 @@ const Game = () => {
         </div>
     )
     
-}
-// game.description in some cases returns a string with paragraph tags - need to figure out a way to parse this out? 
+} 
 
 export default Game
