@@ -5,6 +5,11 @@ const apiCalls = {
             .then(res => res.json())
     },
 
+    getDrinkByType: (type) => {
+        return fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${type}`)
+            .then(res => res.json())
+    },
+
     getSpecificDrink: (drinkId) => {
         return fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${drinkId}`)
             .then(res => res.json())

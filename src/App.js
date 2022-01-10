@@ -1,6 +1,6 @@
 
 import React,  { useEffect } from 'react'
-import './App.css';
+import './App.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { loadGameData } from './redux/actions/boardGame'
 import PairingForm from './Components/PairingForm'

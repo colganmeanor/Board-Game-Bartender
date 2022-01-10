@@ -1,9 +1,10 @@
-import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { setGameName } from '../redux/actions/boardGame';
+import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { setGameName } from '../redux/actions/boardGame'
 import { setLiquorType } from '../redux/actions/liquorSearch'
 import '../Styles/PairingForm.css'
-import { useNavigate } from 'react-router';
+import { useNavigate } from 'react-router'
+import apiCalls from '../apiCalls'
 
 const PairingForm = () => {
 
@@ -22,13 +23,11 @@ const PairingForm = () => {
 
     const findRandomDrink = (event) => {
         event.preventDefault()
-        fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${type}`)
-            .then(res => res.json())
+        apiCalls.getDrinkByType(type)
             .then(data => {
                 let randomNum = Math.floor(Math.random() * data.drinks.length)
                 const drinkObj = data.drinks[randomNum]
                 const gameObj = games.find(game => game.name === gameName)
-                console.log(gameName)
                 navigate(`/${gameObj.id}/${drinkObj.idDrink}`)
             })
     }
