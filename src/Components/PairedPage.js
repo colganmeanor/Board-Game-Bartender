@@ -1,7 +1,7 @@
-import React, {useEffect} from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import Drink from './Drink';
-import Game from './Game';
+import React, {useEffect} from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import Drink from './Drink'
+import Game from './Game'
 import '../Styles/PairedPage.css'
 import { addFavoriteDrink, storeCurrentDrink } from '../redux/actions/favoriteDrinkAction'
 import { useParams } from 'react-router'
@@ -15,13 +15,8 @@ const PairedPage = () => {
 
     const dispatch = useDispatch()
 
-    const game = useSelector(state => {
-        return state.boardGame.currentGame
-    })
-
-    const currentDrink = useSelector(state => {
-        return state.favoriteDrinks.currentDrink
-    })
+    const game = useSelector(state => state.boardGame.currentGame)
+    const currentDrink = useSelector(state => state.favoriteDrinks.currentDrink)
 
     const findSpecificGame = (list) => {
         return list.find(game => game.id === gameId)
@@ -53,6 +48,5 @@ const PairedPage = () => {
             </section>
     )
 }
-
 
 export default PairedPage
