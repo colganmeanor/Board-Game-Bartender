@@ -1,0 +1,17 @@
+.favorites-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.fav-drink-name {
+    font-family: 'Julius Sans One';
+    font-size: 36px;
+    margin: 12px auto;
+    text-align: center;
+}
+
+.fav-drink-image {
+    border-radius: 50%;;
+    padding: 2.4%;
+    width: 180px;
+}

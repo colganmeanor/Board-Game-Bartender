@@ -1,0 +1,28 @@
+import React from 'react'
+import '../Styles/Favorites.css'
+import { useSelector } from 'react-redux'
+import Drink from './Drink'
+
+const Favorites = () => {
+    const favoriteDrinks = useSelector(state => state.favoriteDrinks.favoriteDrinks)
+    console.log("faves", favoriteDrinks)
+
+    const drinks = favoriteDrinks.map(drink => {
+            if (favoriteDrinks) {
+                return (
+                    <div>
+                        <h3 className='fav-drink-name'>{drink.strDrink}</h3>
+                        <img className='fav-drink-image' src={drink.strDrinkThumb}/>
+                    </div>
+                )
+            } 
+    })
+
+    return (
+        <div className='favorites-grid'>
+            {drinks}
+        </div>
+    )
+}
+
+export default Favorites
