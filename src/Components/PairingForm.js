@@ -33,7 +33,7 @@ const PairingForm = () => {
             })
     }
 
-    return (    
+    return (
         <div className='loading-page-bottom'>
             <div className='circular-image'>
             <img src={require('../assets/games-drinks-friends.jpeg')} />
