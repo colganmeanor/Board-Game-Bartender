@@ -4,8 +4,8 @@ describe('Board Game Bartender Home Page', () => {
     })
 
     it('should have a Header component', () => {
-        cy.get('header')
-            .should('have.class', 'header')
+        cy.get('[data-cy=header')
+            .should('exist')
     })
 
     it('should have a title', () => {
@@ -14,23 +14,26 @@ describe('Board Game Bartender Home Page', () => {
     })
 
     it('should have a PairingForm component', () => {
-        cy.get('form')
+        cy.get('[data-cy=pairing-form]')
             .should('exist')
             .should('have.class', 'pairing-form')
     })
 
     it('should have correct elements in form', () => {
-        cy.get('.pairing-form datalist')
+        cy.get('[data-cy=pairing-form] datalist')
+            .should('have.length', 2)
+        
+        cy.get('[data-cy=pairing-form] input')
             .should('have.length', 2)
 
-        cy.get('.pairing-form input').first()
-            .should('have.id', 'game-choice')
+        cy.get('[data-cy=pairing-form] [data-cy=game-choice]')
+            .should('exist')
 
-        cy.get('.pairing-form input').eq(1)
-            .should('have.id', 'liquor-choice')
+        cy.get('[data-cy=pairing-form] [data-cy=liquor-choice]')
+            .should('exist')
 
-        cy.get('.pairing-form button')
-            .should('have.id', 'pair-btn')
+        cy.get('[data-cy=pairing-form] [data-cy=pair-btn]')
+            .should('exist')
     })
 
     it('should have correct labels for form elements', () => {
@@ -45,32 +48,31 @@ describe('Board Game Bartender Home Page', () => {
     })
 
     it('should have the correct options for the liquor datalist', () => {
-        cy.get('#liquors option')
+        cy.get('[data-cy=liquors] option')
             .should('have.length', 8)
 
-        cy.get('#liquors option').eq(0)
+        cy.get('[data-cy=liquors] option').eq(0)
             .should('have.value', 'Vodka')
 
-        cy.get('#liquors option').eq(1)
+        cy.get('[data-cy=liquors] option').eq(1)
             .should('have.value', 'Gin')
 
-        cy.get('#liquors option').eq(2)
+        cy.get('[data-cy=liquors] option').eq(2)
             .should('have.value', 'Rum')
 
-        cy.get('#liquors option').eq(3)
+        cy.get('[data-cy=liquors] option').eq(3)
             .should('have.value', 'Whiskey')
         
-        cy.get('#liquors option').eq(4)
+        cy.get('[data-cy=liquors] option').eq(4)
             .should('have.value', 'Bourbon')
 
-        cy.get('#liquors option').eq(5)
+        cy.get('[data-cy=liquors] option').eq(5)
             .should('have.value', 'Tequila')
 
-        cy.get('#liquors option').eq(6)
+        cy.get('[data-cy=liquors] option').eq(6)
             .should('have.value', 'Scotch')
 
-        cy.get('#liquors option').eq(7)
+        cy.get('[data-cy=liquors] option').eq(7)
             .should('have.value', 'Non Alcoholic')
     })
-
 })
