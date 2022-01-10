@@ -20,6 +20,7 @@
     font-family: 'Oooh Baby';
     font-size: 72px;
     margin-bottom: 24px;
+    margin-top: 10px;
 }
 
 .add-favorite-button {
@@ -31,7 +32,7 @@
     font-family: 'Julius Sans One';
     font-size: 24px;
     height: 64px;
-    margin: 1.6% 0 2%;
+    margin: 1.6% 0 1%;
     padding: .5%;
     width: 200px;
 }
