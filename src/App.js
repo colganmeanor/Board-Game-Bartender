@@ -22,7 +22,6 @@ const App = () => {
 
   return (
     <div>
-<<<<<<< HEAD
         <Header />
         <main className='landing-page'>
           <Routes>
@@ -31,12 +30,6 @@ const App = () => {
             {/* <Route path='/favorites' element={<Favorites />} /> */}
           </Routes>
         </main>
-=======
-      <header data-cy='header'>
-        <h1>Board Game Bartender</h1>
-      </header>
-      {games ? <PairingForm /> : <p>Loading</p>}
->>>>>>> 1b6ec41 (Fix tests' class and id identifiers to instead use data-cy)
     </div>
   );
 }
