@@ -4,12 +4,16 @@ import Drink from './Drink';
 import Game from './Game';
 import '../Styles/PairedPage.css'
 import { addFavoriteDrink } from '../redux/actions/favoriteDrinkAction';
+import { useParams } from 'react-router-dom';
 
 
 
 const PairedPage = () => {
 
     const dispatch = useDispatch()
+
+    console.log(useParams())
+    // const { id } = useParams()
 
     const game = useSelector(state => {
         return state.boardGame.currentGame

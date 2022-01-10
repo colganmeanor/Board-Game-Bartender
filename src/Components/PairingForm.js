@@ -4,11 +4,12 @@ import { findGame } from '../redux/actions/boardGame';
 import { setLiquorType } from '../redux/actions/liquorSearch'
 import { storeCurrentDrink } from '../redux/actions/favoriteDrinkAction';
 import '../Styles/PairingForm.css'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const PairingForm = () => {
 
     const dispatch = useDispatch()
+    const navigate = useNavigate()
 
     const games = useSelector(state => state.boardGame.allGamesData.games)
     const type = useSelector(state => state.liquorSearch.liquorSearchWord)
@@ -28,6 +29,7 @@ const PairingForm = () => {
                     fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${data.drinks[randomNum].idDrink}`)
                         .then(res => res.json())
                             .then(data => dispatch(storeCurrentDrink(data.drinks[0])))
+                                .then(navigate('/:id'))
                 })
     }
 
@@ -60,7 +62,7 @@ const PairingForm = () => {
                     </datalist>
 
                 </label>
-                <Link to='/9665'>
+                <Link to='/:id'>
                     <button className='pair-button' onClick={(event) => findRandomDrink(event)}><span>Pair</span></button>
                 </Link>
                 
