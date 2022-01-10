@@ -52,7 +52,6 @@ const PairedPage = () => {
                 </main>
             </section>
     )
-
 }
 
 

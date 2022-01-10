@@ -10,6 +10,7 @@ import Loading from './Components/Loading'
 import { Routes, Route } from 'react-router-dom'
 import apiCalls from './apiCalls'
 
+
 const App = () => {
   const dispatch = useDispatch()
   const games = useSelector(state => state.boardGame.allGamesData.games)

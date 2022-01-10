@@ -20,7 +20,6 @@ const Game = () => {
             </section>
         </div>
     )
-    
-} 
+}
 
 export default Game
