@@ -4,23 +4,23 @@ import '../Styles/Game.css'
 
 const Game = () => {
 
-    const gameName = useSelector(state => {
+    const gameObj = useSelector(state => {
         return state.boardGame.currentGame
     })
 
-    const gamesList = useSelector(state => {
-        return state.boardGame.allGamesData.games
-    })
+    // const gamesList = useSelector(state => {
+    //     return state.boardGame.allGamesData.games
+    // })
 
-    const game = gamesList.find((game) => {
-        return game.name === gameName
-    })
+    // const game = gamesList.find((game) => {
+    //     return game.name === gameName
+    // })
 
     return (
         <div className="paired-component">
-            <h3 className='game-name'>{game.name}</h3>
+            <h3 className='game-name'>{gameObj.name}</h3>
             <section className='game-info'>
-                <img className="game-image" src={game.image_url} /> 
+                <img className="game-image" src={gameObj.image_url} /> 
                 <aside className='game-specs'>
                     <p>Players:  - </p>
                     <p>Average Play Time: </p>
