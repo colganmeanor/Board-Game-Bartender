@@ -10,7 +10,7 @@ const Favorites = () => {
     const drinks = favoriteDrinks.map(drink => {
             if (favoriteDrinks) {
                 return (
-                    <div>
+                    <div className='fav-drink-card'>
                         <h3 className='fav-drink-name'>{drink.strDrink}</h3>
                         <img className='fav-drink-image' src={drink.strDrinkThumb}/>
                     </div>

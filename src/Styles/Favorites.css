@@ -2,6 +2,15 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 }
+.fav-drink-card {
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    width: 26vw;
+    align-items: center;
+    margin: 8% auto 0;
+    box-shadow: 5px 5px 5px 1px #000000;
+}
 
 .fav-drink-name {
     font-family: 'Julius Sans One';
