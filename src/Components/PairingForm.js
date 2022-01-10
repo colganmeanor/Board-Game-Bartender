@@ -4,14 +4,17 @@ import { findGame } from '../redux/actions/boardGame';
 import { setLiquorType } from '../redux/actions/liquorSearch'
 import { storeCurrentDrink } from '../redux/actions/favoriteDrinkAction';
 import '../Styles/PairingForm.css'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router';
 
 const PairingForm = () => {
 
     const dispatch = useDispatch()
+    let navigate = useNavigate();
 
     const games = useSelector(state => state.boardGame.allGamesData.games)
     const type = useSelector(state => state.liquorSearch.liquorSearchWord)
+    const gameName = useSelector(state => state.boardGame.currentGame)
 
     const gameNames = games.map((game) => {
         return (
@@ -27,7 +30,11 @@ const PairingForm = () => {
                     let randomNum = Math.floor(Math.random() * data.drinks.length)
                     fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${data.drinks[randomNum].idDrink}`)
                         .then(res => res.json())
-                            .then(data => dispatch(storeCurrentDrink(data.drinks[0])))
+                        .then(data => {
+                            dispatch(storeCurrentDrink(data.drinks[0]))
+                            const gameObj = games.find(game => game.name === gameName)
+                            navigate(`/${gameObj.id}+${data.drinks[0].idDrink}`)
+                        })
                 })
     }
 
@@ -60,11 +67,8 @@ const PairingForm = () => {
                     </datalist>
 
                 </label>
-                <Link to='/9665'>
                     <button className='pair-button' onClick={(event) => findRandomDrink(event)}><span>Pair</span></button>
-                </Link>
-                
-                <button className='favorites-button'>Favorites</button>
+                    <button className='favorites-button' onClick={() => {navigate('/favorites')}}>Favorites</button>
             </form>
 
         </div>

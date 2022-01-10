@@ -13,26 +13,27 @@ const App = () => {
   const dispatch = useDispatch()
   const games = useSelector(state => state.boardGame.allGamesData.games)
   
-  const getDrinkData = () => {
-    return fetch('https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail')
-      .then(res => res.json())
-  }
+  // const getDrinkData = () => {
+  //   return fetch('https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail')
+  //     .then(res => res.json())
+  // }
 
   const getGameData = () => {
     return fetch('https://api.boardgameatlas.com/api/search?name=Catan&pretty=true&client_id=JLBr5npPhV')
       .then(res => res.json())
+        .then(data => dispatch(loadGameData(data)))
   }
     
-  const getData = () => {
-    Promise.all([getDrinkData(), getGameData()])
-      .then(data => {
-        dispatch(loadDrinkData(data[0]))
-        dispatch(loadGameData(data[1]))
-      })
-  }
+  // const getData = () => {
+  //   Promise.all([getDrinkData(), getGameData()])
+  //     .then(data => {
+  //       dispatch(loadDrinkData(data[0]))
+  //       dispatch(loadGameData(data[1]))
+  //     })
+  // }
 
   useEffect(() => {
-    getData()
+    getGameData()
   }, [])
 
   return (
@@ -41,10 +42,10 @@ const App = () => {
         <main className='landing-page'>
           <Routes>
             <Route path='/' element={games ? <PairingForm /> : <p>Loading</p>}/>
-            <Route path='/:id' element={<PairedPage />}/>
+            <Route path='/:id' element={<PairedPage />} />
+            {/* <Route path='/favorites' element={<Favorites />} /> */}
           </Routes>
         </main>
-      
     </div>
   );
 }
