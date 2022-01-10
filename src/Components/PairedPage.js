@@ -1,13 +1,22 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Drink from './Drink';
 import Game from './Game';
 import '../Styles/PairedPage.css'
-import { addFavoriteDrink } from '../redux/actions/favoriteDrinkAction';
-
+import { addFavoriteDrink, storeCurrentDrink } from '../redux/actions/favoriteDrinkAction'
+import { useParams } from 'react-router'
+import apiCalls from '../apiCalls'
+import { findGame } from '../redux/actions/boardGame'
 
 
 const PairedPage = () => {
+
+    const { gameId, drinkId } = useParams()
+    // if the params match state then display
+    // otherwise refetch and dispatch and then display
+    // let randomNum = Math.floor(Math.random() * data.drinks.length)
+    // const drinkObj = data.drinks[randomNum]
+    // const gameObj = games.find(game => game.name === gameName)
 
     const dispatch = useDispatch()
 
@@ -18,6 +27,25 @@ const PairedPage = () => {
     const currentDrink = useSelector(state => {
         return state.favoriteDrinks.currentDrink
     })
+
+    // const games = useSelector(state => {
+    //     return state.boardGame.allGamesData.games
+    // })
+    const findSpecificGame = (list) => {
+        return list.find(game => game.id === gameId)
+    }
+
+    useEffect(() => {
+        apiCalls.getGameData()
+            .then(data => {
+                const gameObj = findSpecificGame(data.games)
+                dispatch(findGame(gameObj))
+            })
+        apiCalls.getSpecificDrink(drinkId)
+            .then(data => {
+                dispatch(storeCurrentDrink(data.drinks[0]))
+            })
+    }, [])
 
     return (
             <section>
