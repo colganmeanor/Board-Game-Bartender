@@ -9,7 +9,7 @@
 
 
 .game-image {
-    height: auto;
+    max-height: 180px;
     margin-left: 36px;
     max-width: 160px;
     min-width: 160px; 
@@ -18,7 +18,7 @@
 
 .game-name {
     font-family: 'Julius Sans One';
-    font-size: 36px;
+    font-size: 32px;
     margin: 12px auto;
     max-width: 88%;
     text-align: center;
