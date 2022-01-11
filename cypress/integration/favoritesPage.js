@@ -46,6 +46,12 @@ describe('Board Game Bartender Favorites Page', () => {
             .get('img')
     })
 
+    it('should allow users to remove a favorited drink', () => {
+        cy.get('[data-cy=remove-button]').first().click({multiple: true})
+        cy.get('[data-cy=favorite-card]')
+            .should('have.length', 1)
+    })
+
     it('should allow users to return to the main page', () => {
         cy.get('[data-cy=favorite-return-button]').click()
         cy.get('[data-cy=pairing-form]')

@@ -15,7 +15,7 @@ const Favorites = () => {
                 <div className='fav-drink-card' data-cy='favorite-card'>
                     <div className='left-side-card'>
                         <h3 className='fav-drink-name'>{drink.strDrink}</h3>
-                        <button className='remove-button' onClick={() => dispatch(removeFavoriteDrink(drink.idDrink))}>Remove</button>
+                        <button className='remove-button' data-cy='remove-button' onClick={() => dispatch(removeFavoriteDrink(drink.idDrink))}>Remove</button>
                     </div>
                         <img className='fav-drink-image' src={drink.strDrinkThumb}/>    
                 </div>
