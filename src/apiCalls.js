@@ -18,7 +18,7 @@ const apiCalls = {
                 if (res.ok) {
                     return res.json()
                 } else {
-                    throw new Error('Server is down, try again later!')
+                    throw new Error()
                 }
             })
             .catch(err => err)
@@ -30,7 +30,7 @@ const apiCalls = {
                 if (res.ok) {
                     return res.json()
                 } else {
-                    throw new Error('Server is down, try again later!')
+                    throw new Error()
                 }
             })
             .catch(err => err)
