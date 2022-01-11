@@ -8,7 +8,6 @@ describe('Board Game Bartender Favorites Page', () => {
         cy.get('[data-cy=game-dropdown]').type('Catan')
         cy.get('[data-cy=liquor-input]').type('Vodka')
         cy.get('[data-cy=pair-button]').click()
-        
     })
 
     it('allow users to add the drink to favorites', () => {
@@ -46,7 +45,6 @@ describe('Board Game Bartender Favorites Page', () => {
         cy.get('[data-cy=favorite-card] h3')
             .get('img')
     })
-  
-    
+
 })
 

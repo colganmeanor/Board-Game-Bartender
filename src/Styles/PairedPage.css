@@ -23,7 +23,8 @@
     margin-top: 10px;
 }
 
-.add-favorite-button {
+.add-favorite-button,
+.return-button {
     background-color: teal;
     border: none;
     border-radius: 10px;
@@ -32,12 +33,12 @@
     font-family: 'Julius Sans One';
     font-size: 24px;
     height: 64px;
-    margin: 1.6% 0 1%;
-    padding: .5%;
+    margin: 1.6% 3% 1%;
     width: 200px;
 }
 
-.add-favorite-button:hover {
+.add-favorite-button:hover,
+.return-button:hover {
     background-color: white;
     color: #008080;
     font-weight: 600;
@@ -49,3 +50,14 @@
     font-size: 48px;
     margin: auto 0;
 }
+
+.bottom-buttons {
+    display: flex;
+}
+
+.return-button {
+    margin-top: 3%;
+}
+
+
+

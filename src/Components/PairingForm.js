@@ -1,9 +1,9 @@
-import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { setGameName } from '../redux/actions/boardGame';
+import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { setGameName } from '../redux/actions/boardGame'
 import { setLiquorType } from '../redux/actions/liquorSearch'
 import '../Styles/PairingForm.css'
-import { useNavigate } from 'react-router';
+import { useNavigate } from 'react-router'
 
 const PairingForm = () => {
 
