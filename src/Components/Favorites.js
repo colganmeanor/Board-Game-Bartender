@@ -10,7 +10,7 @@ const Favorites = () => {
     const drinks = favoriteDrinks.map(drink => {
             if (favoriteDrinks) {
                 return (
-                    <div className='fav-drink-card'>
+                    <div className='fav-drink-card' data-cy='favorite-card'>
                         <h3 className='fav-drink-name'>{drink.strDrink}</h3>
                         <img className='fav-drink-image' src={drink.strDrinkThumb}/>
                     </div>
@@ -19,7 +19,7 @@ const Favorites = () => {
     })
 
     return (
-        <div className='favorites-grid'>
+        <div className='favorites-grid' data-cy='fav-drinks-grid'>
             {drinks}
         </div>
     )
