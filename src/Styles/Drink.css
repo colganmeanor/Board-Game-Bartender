@@ -6,8 +6,8 @@
 
 .drink-name {
     font-family: 'Julius Sans One';
-    font-size: 36px;
-    margin: 12px auto;
+    font-size: 32px;
+    margin: 12px auto 2px;
     text-align: center;
 }
 
@@ -18,6 +18,8 @@
 .drink-specs {
     display: flex;
     flex-direction: column;
+    font-size: 12px;
+    line-height: 0;
     margin-left: 36px;
 }
 

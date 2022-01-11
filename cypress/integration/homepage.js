@@ -1,3 +1,5 @@
+import { Children } from "react"
+
 describe('Board Game Bartender Home Page', () => {
     beforeEach(() => {
         cy.intercept('GET', 'https://api.boardgameatlas.com/api/search?limit=25&pretty=true&client_id=YWBLPm0lyY', {

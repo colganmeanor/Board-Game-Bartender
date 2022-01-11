@@ -7,6 +7,7 @@ import { addFavoriteDrink, storeCurrentDrink } from '../redux/actions/favoriteDr
 import { useParams } from 'react-router'
 import apiCalls from '../apiCalls'
 import { findGame } from '../redux/actions/boardGame'
+import { NavLink } from 'react-router-dom'
 
 const PairedPage = () => {
 
@@ -47,7 +48,12 @@ const PairedPage = () => {
                         <p className='plus-sign'>+</p>
                         {currentDrink && <Drink />}
                     </div>
-                    <button className='add-favorite-button' data-cy='favorites-button' onClick={() => {dispatch(addFavoriteDrink(currentDrink))}}>Add Drink to Favorites!</button>
+                    <div className='bottom-buttons'>
+                        <NavLink to={'/'} style={{ textDecoration: 'none' }}>
+                            <button className='return-button'>Return to Main</button>
+                        </NavLink>
+                        <button className='add-favorite-button' data-cy='favorites-button' onClick={() => { dispatch(addFavoriteDrink(currentDrink)) }}>Add Drink to Favorites!</button>
+                    </div>
                 </main>
             }
         </section >
