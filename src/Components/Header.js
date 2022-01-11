@@ -8,7 +8,7 @@ const Header = () => {
             <NavLink to={'/'} style={{textDecoration: 'none'}}>
                 <h1 className='title' data-cy='page-title'>Board Game Bartender</h1>    
             </NavLink>
-            <div className='slogan-icon'>
+            <div aria-label="slogan and icon" className='slogan-icon'>
                 <p className='slogan'>we'll take decision making off your plate ...</p>
                 <img alt="Stylized drawing of two cocktails in tumbler style glasses" src={require('../assets/cocktail-glasses.png')} className='cocktail-icon'/>
             </div>
