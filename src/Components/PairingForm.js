@@ -54,8 +54,8 @@ const PairingForm = () => {
                 <label htmlFor='liquor-choice' data-cy='pairing-form' className='liquor-input'>
                     
                     <input className ='liquor-dropdown' data-cy='liquor-choice' list='liquors' id='liquor-choice' placeholder='Whatchya drinking?' onChange={(event) => dispatch(setLiquorType(event.target.value))}/>
-                    <datalist data-cy='liquor-choice' id='liquors' >
-                        <option data-cy='liquor-choice' value='Vodka' />
+                    <datalist id='liquors' >
+                        <option value='Vodka' />
                         <option value='Gin' />
                         <option value='Rum' />
                         <option value='Whiskey' />

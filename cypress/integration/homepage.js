@@ -76,3 +76,30 @@ describe('Board Game Bartender Home Page', () => {
             .should('have.value', 'Non Alcoholic')
     })
 })
+
+describe('the form on the homepage should handle user interactions', () => {
+    beforeEach(() => {
+        cy.visit('http://localhost:3000/')
+    })
+
+    it('should reflect the correct value when typing in the game dropdown', () => {
+        cy.get('[data-cy=game-choice]')
+            .type('Catan')
+            .should('have.value', 'Catan')
+        
+        cy.get('[data-cy=liquor-choice]')
+            .type('Gin')
+            .should('have.value', 'Gin')
+        
+        cy.get('[data-cy=game-choice]').clear()
+            .get('[data-cy=liquor-choice').clear()
+
+        cy.get('[data-cy=liquor-choice]')
+            .type('Whiskey')
+            .should('have.value', 'Whiskey')
+
+        cy.get('[data-cy=game-choice]')
+            .type('Gloomhaven')
+            .should('have.value', 'Gloomhaven')
+    })
+})
