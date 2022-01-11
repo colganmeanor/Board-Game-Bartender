@@ -3,7 +3,7 @@ import '../Styles/Header.css'
 
 const Header = () => {
     return (
-        <header className='heading-section'>
+        <header className='heading-section' data-cy='header'>
             <h1 className='title'>Board Game Bartender</h1>
             <div className='slogan-icon'>
                 <p className='slogan'>we'll take decision making off your plate ...</p>

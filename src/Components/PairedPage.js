@@ -42,12 +42,12 @@ const PairedPage = () => {
             { error ? <p className='error-message-pair-page'>Sorry, there's been an error: '{error}'</p> :
                 <main className="paired-page">
                     <h2 className='perfect-pairing-title'>Your Perfect Pairing!</h2>
-                        <div className='paired-components'>
-                            {game && <Game />}
-                            <p className='plus-sign'>+</p>
-                            {currentDrink && <Drink />}
-                        </div>
-                    <button className='add-favorite-button' onClick={() => { dispatch(addFavoriteDrink(currentDrink)) }}>Add Drink to Favorites!</button>
+                    <div className='paired-components'>
+                        {game && <Game />}
+                        <p className='plus-sign'>+</p>
+                        {currentDrink && <Drink />}
+                    </div>
+                    <button className='add-favorite-button' data-cy='favorites-button' onClick={() => {dispatch(addFavoriteDrink(currentDrink))}}>Add Drink to Favorites!</button>
                 </main>
             }
         </section >
