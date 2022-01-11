@@ -1,7 +1,7 @@
 import React from 'react'
 import '../Styles/Favorites.css'
 import { useDispatch, useSelector } from 'react-redux'
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { removeFavoriteDrink } from '../redux/actions/favoriteDrinkAction'
 
 
@@ -26,9 +26,9 @@ const Favorites = () => {
     
     return (
         <div>
-            <NavLink to={'/'} style={{textDecoration: 'none'}}>
+            <Link to={'/'} style={{textDecoration: 'none'}}>
                 <button className='favorites-return-button' data-cy='favorite-return-button'>Return to Main</button>   
-            </NavLink>
+            </Link>
             <div className='favorites-grid' data-cy='fav-drinks-grid'>
                 {drinks}
             </div>
