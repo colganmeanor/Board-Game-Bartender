@@ -40,7 +40,7 @@ const PairingForm = () => {
     return (
         <div className='loading-page-bottom'>
             <div className='circular-image'>
-                <img src={require('../assets/games-drinks-friends.jpeg')} />
+                <img alt="Group of friends sitting at a table playing Jenga and drinking beers" src={require('../assets/games-drinks-friends.jpeg')} />
             </div>
             <form aria-label="Choose Your Game and Liquor" className='game-liquor-input pairing-form' data-cy='pairing-form'>
                 <label htmlFor='game-choice' data-cy='pairing-form' className='game-input'>
