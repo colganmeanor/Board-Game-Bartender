@@ -1,7 +1,13 @@
+.paired-page,
+.paired-components,
+.error-message-pair-page,
+.bottom-buttons {
+    display: flex;
+}
+
 .paired-page {
     align-items: center;
-    background-color: #19435A;
-    display: flex;
+    background-color: #19435A; 
     flex-direction: column;
     height: auto;
     justify-content: center;
@@ -9,7 +15,6 @@
 }
 
 .paired-components {
-    display: flex;
     flex-direction: row;
     justify-content: space-around;
     width: 100%;
@@ -19,8 +24,7 @@
     color: white;
     font-family: 'Oooh Baby';
     font-size: 72px;
-    margin-bottom: 24px;
-    margin-top: 10px;
+    margin: 10px 0 24px 0;
 }
 
 .add-favorite-button,
@@ -30,10 +34,10 @@
     border-radius: 10px;
     box-shadow: 3px 3px 3px 1px #000000;
     color: white;
-    font-family: 'Julius Sans One';
     font-size: 24px;
     height: 64px;
     margin: 1.6% 3% 1%;
+    transition: all .2s ease-in-out;
     width: 200px;
 }
 
@@ -51,20 +55,20 @@
     margin: auto 0;
 }
 
-.error-message-pair-page {
-    position: fixed;
-    height: 50%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.error-message-pair-page,
+.add-favorite-button,
+.return-button {
     font-family: 'Julius Sans One';
-    color: white;
-    font-size: 30px;
 }
 
-.bottom-buttons {
-    display: flex;
+.error-message-pair-page {
+    align-items: center;
+    color: white;
+    height: 50%;
+    font-size: 30px;
+    justify-content: center;
+    position: fixed;
+    width: 100%;
 }
 
 .return-button {
