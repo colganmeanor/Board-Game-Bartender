@@ -12,7 +12,7 @@ export const favoriteDrinksReducer = (state = initialState, action) => {
             }
         case 'REMOVE_FAVORITE_DRINK':
             const updatedArray = state.favoriteDrinks.filter((drink) => {
-                return drink !== action.payload
+                return drink.idDrink !== action.payload
             })
             return {
                 ...state,

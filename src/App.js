@@ -9,6 +9,7 @@ import Header from './Components/Header'
 import Loading from './Components/Loading'
 import { Routes, Route } from 'react-router-dom'
 import apiCalls from './apiCalls'
+import Favorites from './Components/Favorites'
 
 
 const App = () => {
@@ -27,7 +28,7 @@ const App = () => {
           <Routes>
             <Route path='/' element={games ? <PairingForm /> : <Loading />}/>
             <Route path='/:gameId/:drinkId' element={<PairedPage />} />
-            {/* <Route path='/favorites' element={<Favorites />} /> */}
+            <Route path='/favorites' element={<Favorites />} />
           </Routes>
         </main>
     </div>
