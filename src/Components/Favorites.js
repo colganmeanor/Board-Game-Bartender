@@ -11,7 +11,7 @@ const Favorites = () => {
     const drinks = favoriteDrinks.map(drink => {
         if (favoriteDrinks) {
             return (
-                <div className='fav-drink-card' data-cy='favorite-card'>
+                <div className='fav-drink-card' data-cy='favorite-card' key={drink.idDrink}>
                     <div className='left-side-card'>
                         <h3 className='fav-drink-name'>{drink.strDrink}</h3>
                         <button className='remove-button' data-cy='remove-button' onClick={() => dispatch(removeFavoriteDrink(drink.idDrink))}>Remove</button>

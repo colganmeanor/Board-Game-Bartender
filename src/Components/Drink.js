@@ -56,7 +56,7 @@ const Drink = () => {
     })
 
     return (
-        <div className="paired-component">
+        <div className="paired-component" key={currentDrink.idDrink}>
             <h3 className='drink-name'>{currentDrink.strDrink}</h3>
             <section className='drink-info'>
                 <img className="drink-image" src={currentDrink.strDrinkThumb} />
