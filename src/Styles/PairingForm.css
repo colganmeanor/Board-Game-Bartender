@@ -157,6 +157,17 @@
     }
 }
 
+.error-message-pair-form {
+    background-color: white;
+    color: red;
+    font-size: 16px;
+    border-radius: 10px;
+    font-family: 'Julius Sans One';
+    width: 100%;
+    padding: 2% 0;
+    text-align: center;
+}
+
 @media screen and (max-width: 460px) {
     .circular-image {
         display: none;
