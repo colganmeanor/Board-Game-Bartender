@@ -10,7 +10,7 @@ const Header = () => {
             </NavLink>
             <div className='slogan-icon'>
                 <p className='slogan'>we'll take decision making off your plate ...</p>
-                <img src={require('../assets/cocktail-glasses.png')} className='cocktail-icon'/>
+                <img alt="Stylized drawing of two cocktails in tumbler style glasses" src={require('../assets/cocktail-glasses.png')} className='cocktail-icon'/>
             </div>
         </header>
     )
