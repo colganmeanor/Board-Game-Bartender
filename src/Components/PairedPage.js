@@ -48,7 +48,7 @@ const PairedPage = () => {
                         <p className='plus-sign'>+</p>
                         {currentDrink && <Drink />}
                     </div>
-                    <button className='add-favorite-button'onClick={() => {dispatch(addFavoriteDrink(currentDrink))}}>Add Drink to Favorites!</button>
+                    <button className='add-favorite-button' data-cy='favorites-button' onClick={() => {dispatch(addFavoriteDrink(currentDrink))}}>Add Drink to Favorites!</button>
                 </main>
             </section>
     )

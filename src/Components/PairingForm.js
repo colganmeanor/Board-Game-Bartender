@@ -39,19 +39,19 @@ const PairingForm = () => {
             <img src={require('../assets/games-drinks-friends.jpeg')} />
             </div>
             
-            <form className='game-liquor-input'>
-                <label htmlFor='game-choice' className='game-input'>
+            <form className='game-liquor-input pairing-form' data-cy='pairing-form'>
+                <label htmlFor='game-choice' data-cy='pairing-form' className='game-input'>
                     
-                    <input className='game-dropdown' id='game-choice' placeholder='Choose Your Game!' list='games' onChange={(event) => dispatch(setGameName(event.target.value))}/>
+                    <input className='game-dropdown' data-cy='game-choice' id='game-choice' placeholder='Choose Your Game!' list='games' onChange={(event) => dispatch(setGameName(event.target.value))}/>
                         <datalist id='games'>
                             {gameNames}
                         </datalist>
                 </label>
-                <label htmlFor='liquor-choice' className='liquor-input'>
+                <label htmlFor='liquor-choice' data-cy='pairing-form' className='liquor-input'>
                     
-                    <input className ='liquor-dropdown'list='liquors' id='liquor-choice' placeholder='Whatchya drinking?' onChange={(event) => dispatch(setLiquorType(event.target.value))}/>
-                    <datalist id='liquors' >
-                        <option value='Vodka' />
+                    <input className ='liquor-dropdown' data-cy='liquor-choice' list='liquors' id='liquor-choice' placeholder='Whatchya drinking?' onChange={(event) => dispatch(setLiquorType(event.target.value))}/>
+                    <datalist data-cy='liquor-choice' id='liquors' >
+                        <option data-cy='liquor-choice' value='Vodka' />
                         <option value='Gin' />
                         <option value='Rum' />
                         <option value='Whiskey' />
@@ -62,8 +62,8 @@ const PairingForm = () => {
                     </datalist>
 
                 </label>
-                    <button className='pair-button' onClick={(event) => findRandomDrink(event)}><span>Pair</span></button>
-                    <button className='favorites-button' onClick={() => {navigate('/favorites')}}>Favorites</button>
+                    <button className='pair-button' data-cy='pair-button' onClick={(event) => findRandomDrink(event)}><span>Pair</span></button>
+                    <button className='favorites-button' data-cy='favorites-page-button' onClick={() => {navigate('/favorites')}}>Favorites</button>
             </form>
 
         </div>
