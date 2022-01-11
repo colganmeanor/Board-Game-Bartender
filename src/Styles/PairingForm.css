@@ -32,7 +32,6 @@
     margin-bottom: 48px;
     padding: 2%;
     text-align: center;
-    transition: all .2s ease-in-out;
 }
 
 .pair-button,
@@ -40,6 +39,7 @@
     background-color: teal;
     color: white;
     font-size: 24px;
+    transition: all .2s ease-in-out;
 }
 
 .pair-button {
@@ -72,4 +72,101 @@
 .circular-image img { 
     height: auto; 
     width: 100%; 
+}
+
+@media screen and (max-width: 1160px) {
+    .circular-image {
+        height: 360px;
+        width: 360px;
+        margin: 6% 0 0 10%;
+    }
+
+    .liquor-dropdown,
+    .game-dropdown {
+        width: 240px;
+    }
+
+    .game-liquor-input {
+        align-items: flex-start;
+        margin-left: 10%;
+    }
+
+}
+
+@media screen and (max-width: 902px) {
+    .circular-image {
+        height: 320px;
+        width: 320px;
+        margin: 8% 0 0 8%;
+    }
+
+    .liquor-dropdown,
+    .game-dropdown {
+        width: 200px;
+    }
+
+    .game-liquor-input {
+        align-items: flex-start;
+        margin-top: 8%;
+        margin-left: 10%;
+    }
+    .pair-button {
+        font-size: 20px;
+        width: 100px;
+    }
+    
+    .favorites-button {
+        font-size: 20px;
+        width: 130px;
+    }
+
+}
+
+@media screen and (max-width: 750px) {
+    .circular-image {
+        height: 280px;
+        width: 280px;
+        margin: 8% 0 0 8%;
+    }
+
+    .liquor-dropdown,
+    .game-dropdown {
+        width: 200px;
+    }
+
+    .game-liquor-input {
+        align-items: flex-start;
+        margin-top: 8%;
+        margin-left: 10%;
+    }
+    .pair-button {
+        font-size: 20px;
+        width: 100px;
+    }
+    
+    .favorites-button {
+        font-size: 20px;
+        width: 130px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .circular-image {
+        height: 80px;
+        width: 80px;
+    }
+}
+
+@media screen and (max-width: 460px) {
+    .circular-image {
+        display: none;
+        align-items: center;
+    }
+
+    .liquor-dropdown,
+    .game-dropdown,
+    .pair-button,
+    .favorites-button {
+        margin: 6% auto;
+    }
 }

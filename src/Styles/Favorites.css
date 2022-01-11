@@ -14,8 +14,7 @@
 
 .fav-drink-name {
     font-family: 'Julius Sans One';
-    font-size: 30px;
-    margin: 12px auto;
+    font-size: 26px;
     text-align: center;
 }
 
@@ -36,4 +35,28 @@
     height: 50px;
     margin: .6% 3% 0;
     width: 180px;
+}
+
+.left-side-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.remove-button {
+    border: none;
+    border-radius: 6px;
+    box-shadow: 3px 3px 3px 1px #000000;
+    background-color: teal;
+    color: white;
+    font-size: 14px;
+    width: 50%;
+}
+
+.remove-button:hover {
+    background-color: white;
+    color: #008080;
+    font-weight: 600;
+    transform: scale(1.2);
 }

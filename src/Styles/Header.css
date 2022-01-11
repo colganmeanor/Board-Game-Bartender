@@ -12,14 +12,14 @@
 .title {
     color: black;
     font-family: 'Julius Sans One';
-    font-size: 96px;
+    font-size: 550%;
     font-weight: 400;
-    margin: 2% 0 0 10%;
+    margin: 2% 0 0 12%;
 }
 
 .slogan {
     font-family: 'Oooh Baby';
-    font-size: 50px;
+    font-size: 320%;
     margin-left: 20%;
     margin-top: 8px;
 }
@@ -32,4 +32,141 @@
 
 .slogan-icon {
     display: flex;
+}
+
+@media screen and (max-width: 1232px) {
+    .title {
+        font-size: 400%;
+    }
+    .slogan {
+        font-size: 240%;
+        margin-left: 12%;
+    }
+    .cocktail-icon {
+        margin-left: 24px;
+    }
+}
+
+@media screen and (max-width: 902px) {
+    .heading-section {
+        height: 210px;
+    }
+
+    .title {
+        font-size: 336%;
+    }
+
+    .slogan {
+        font-size: 180%;
+        margin-left: 14%;
+    }
+
+    .cocktail-icon {
+        margin-left: 18px;
+    }
+
+}
+
+@media screen and (max-width: 750px) {
+    .title {
+        font-size: 290%;
+    }
+
+    .slogan-icon {
+        flex-direction: column;
+        align-items: center;
+    }
+    .slogan {
+        font-size: 140%;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .title {
+        align-items: center;
+        font-size: 296%;
+        overflow-wrap: break-word;
+    }
+
+    .slogan {
+        font-size: 180%;
+        margin-left: 8%;
+        overflow-wrap: break-word;
+        width: 40%;
+    }
+
+    .slogan-icon {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .cocktail-icon {
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 620px) {
+    .icon {
+        width: 120px;
+        height: 60px;
+    }
+
+    .slogan-icon {
+        align-items: flex-start;
+    }
+    .cocktail-icon {
+        width: 160px;
+        height: 60px;
+    }
+}
+
+@media screen and (max-width: 554px) {
+    .title {
+        font-size: 260%;
+    }
+    .cocktail-icon {
+        width: 90px;
+        height: 45px;
+    }
+
+    .slogan-icon {
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .slogan {
+        font-size: 100%;
+        margin-left: 6%;
+        overflow-wrap: break-word;
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .title {
+        font-size: 260%;
+        margin:auto
+    }
+    .cocktail-icon {
+        width: 90px;
+        height: 45px;
+    }
+
+    .slogan-icon {
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .slogan {
+        font-size: 120%;
+        margin-left: 6%;
+        overflow-wrap: break-word;
+        width: 90%;
+    }
+
 }
