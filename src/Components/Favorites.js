@@ -21,7 +21,7 @@ const Favorites = () => {
     return (
         <div>
             <NavLink to={'/'} style={{textDecoration: 'none'}}>
-                <button className='favorites-return-button'>Return to Main</button>   
+                <button className='favorites-return-button' data-cy='favorite-return-button'>Return to Main</button>   
             </NavLink>
             <div className='favorites-grid' data-cy='fav-drinks-grid'>
                 {drinks}
