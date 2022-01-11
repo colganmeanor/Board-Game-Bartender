@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { removeFavoriteDrink } from '../redux/actions/favoriteDrinkAction'
 
-
 const Favorites = () => {
     const favoriteDrinks = useSelector(state => state.favoriteDrinks.favoriteDrinks)
     const dispatch = useDispatch()
@@ -23,7 +22,6 @@ const Favorites = () => {
         } 
     })
 
-    
     return (
         <div>
             <Link to={'/'} style={{textDecoration: 'none'}}>

@@ -51,16 +51,16 @@ const PairingForm = () => {
                 </label>
                 <label htmlFor='liquor-choice' data-cy='pairing-form' className='liquor-input'>
                     <input className ='liquor-dropdown' data-cy='liquor-choice' list='liquors' id='liquor-choice' placeholder='Whatchya drinking?' onChange={(event) => dispatch(setLiquorType(event.target.value))}/>
-                    <datalist id='liquors' >
-                        <option value='Vodka' />
-                        <option value='Gin' />
-                        <option value='Rum' />
-                        <option value='Whiskey' />
-                        <option value='Bourbon' />
-                        <option value='Tequila' />
-                        <option value='Scotch' />
-                        <option value='Non Alcoholic' />
-                    </datalist>
+                        <datalist id='liquors' >
+                            <option value='Vodka' />
+                            <option value='Gin' />
+                            <option value='Rum' />
+                            <option value='Whiskey' />
+                            <option value='Bourbon' />
+                            <option value='Tequila' />
+                            <option value='Scotch' />
+                            <option value='Non Alcoholic' />
+                        </datalist>
                 </label>
                     <button className='pair-button' data-cy='pair-button' onClick={(event) => findRandomDrink(event)}><span>Pair</span></button>
                     <button className='favorites-button' data-cy='favorites-page-button' onClick={() => {navigate('/favorites')}}>Favorites</button>

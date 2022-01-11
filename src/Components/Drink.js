@@ -66,7 +66,6 @@ const Drink = () => {
             </section>
         </div>
     )
-
 }
 
 export default Drink
