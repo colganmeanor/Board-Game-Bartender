@@ -3,3 +3,14 @@
   background-color: #19435A;
   height: 532px;
 }
+
+.error-message {
+  position: fixed;
+  height: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 30px;
+}
