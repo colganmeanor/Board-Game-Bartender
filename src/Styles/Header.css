@@ -4,18 +4,17 @@
     display: flex;
 }
 
-
 .heading-section {
-    /* border: 2px solid green; */
     flex-direction: column;
     height: 232px;
 }
 
 .title {
+    color: black;
     font-family: 'Julius Sans One';
     font-size: 96px;
     font-weight: 400;
-    margin: 32px auto 0;
+    margin: 2% 0 0 10%;
 }
 
 .slogan {
