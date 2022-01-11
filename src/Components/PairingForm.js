@@ -28,7 +28,6 @@ const PairingForm = () => {
                 let randomNum = Math.floor(Math.random() * data.drinks.length)
                 const drinkObj = data.drinks[randomNum]
                 const gameObj = games.find(game => game.name === gameName)
-                console.log(gameName)
                 navigate(`/${gameObj.id}/${drinkObj.idDrink}`)
             })
     }
