@@ -1,19 +1,19 @@
-.loading-page-bottom {
+.loading-page-bottom,
+.game-liquor-input,
+.game-input,
+.liquor-input {
     display: flex;
 }
 
 .game-liquor-input {
     align-items: center;
-    display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-left: 14%;
-    margin-top: 2%;
+    margin: 2% 0 0 14%;
 }
 
 .game-input,
 .liquor-input {
-    display: flex;
     flex-direction: column;
     padding: 1%;
     width: 298px; 
@@ -62,8 +62,7 @@
     border-radius: 50%; 
     box-shadow: 5px 4px 4px 1px #000000;
     height: 480px; 
-    margin-left: 204px;
-    margin-top: 24px;
+    margin: 24px 0 0 204px;
     overflow: hidden; 
     position: relative; 
     width: 480px; 
@@ -107,8 +106,7 @@
 
     .game-liquor-input {
         align-items: flex-start;
-        margin-top: 8%;
-        margin-left: 10%;
+        margin: 8% 0 0 10%;
     }
     .pair-button {
         font-size: 20px;
