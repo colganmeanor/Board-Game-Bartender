@@ -38,7 +38,7 @@ const PairingForm = () => {
     }
 
     return (
-        <div className='loading-page-bottom'>
+        <div aria-label="Game and Drink Pairing Section" className='loading-page-bottom'>
             <div className='circular-image'>
                 <img alt="Group of friends sitting at a table playing Jenga and drinking beers" src={require('../assets/games-drinks-friends.jpeg')} />
             </div>
