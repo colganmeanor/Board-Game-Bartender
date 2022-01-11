@@ -51,6 +51,18 @@
     margin: auto 0;
 }
 
+.error-message-pair-page {
+    position: fixed;
+    height: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Julius Sans One';
+    color: white;
+    font-size: 30px;
+}
+
 .bottom-buttons {
     display: flex;
 }

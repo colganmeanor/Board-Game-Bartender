@@ -8,7 +8,6 @@ const Header = () => {
             <NavLink to={'/'} style={{textDecoration: 'none'}}>
                 <h1 className='title' data-cy='page-title'>Board Game Bartender</h1>    
             </NavLink>
-
             <div className='slogan-icon'>
                 <p className='slogan'>we'll take decision making off your plate ...</p>
                 <img src={require('../assets/cocktail-glasses.png')} className='cocktail-icon'/>
