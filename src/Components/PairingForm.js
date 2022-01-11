@@ -42,7 +42,7 @@ const PairingForm = () => {
             <div className='circular-image'>
                 <img src={require('../assets/games-drinks-friends.jpeg')} />
             </div>
-            <form className='game-liquor-input pairing-form' data-cy='pairing-form'>
+            <form aria-label="Choose Your Game and Liquor" className='game-liquor-input pairing-form' data-cy='pairing-form'>
                 <label htmlFor='game-choice' data-cy='pairing-form' className='game-input'>
                     <input aria-required="true" className='game-dropdown' data-cy='game-choice' id='game-choice' placeholder='Choose Your Game!' list='games' onChange={(event) => dispatch(setGameName(event.target.value))}/>
                         <datalist id='games'>
