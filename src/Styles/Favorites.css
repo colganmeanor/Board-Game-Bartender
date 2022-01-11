@@ -8,6 +8,7 @@
     border-radius: 10px;
     box-shadow: 5px 5px 5px 1px #000000;
     display: flex;
+    justify-content: space-betweengit ;
     margin: 4% auto 0;
     width: 26vw;
 }
