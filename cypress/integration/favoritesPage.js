@@ -5,8 +5,8 @@ describe('Board Game Bartender Favorites Page', () => {
     })
 
     it('should allow users to enter their game and liquor preferences to make a pairing', () => {
-        cy.get('[data-cy=game-dropdown]').type('Catan')
-        cy.get('[data-cy=liquor-input]').type('Vodka')
+        cy.get('[data-cy=game-choice]').type('Catan')
+        cy.get('[data-cy=liquor-choice]').type('Vodka')
         cy.get('[data-cy=pair-button]').click()
     })
 
@@ -14,8 +14,8 @@ describe('Board Game Bartender Favorites Page', () => {
         cy.wait(3000)
         cy.get('[data-cy=favorites-button]').click()
         cy.go('back')
-        cy.get('[data-cy=game-dropdown]').type('Catan: Cities & Knights')
-        cy.get('[data-cy=liquor-input]').type('Tequila')
+        cy.get('[data-cy=game-choice]').type('Catan: Cities & Knights')
+        cy.get('[data-cy=liquor-choice]').type('Tequila')
         cy.get('[data-cy=pair-button]').click()
         cy.wait(3000)
         cy.get('[data-cy=favorites-button]').click()
