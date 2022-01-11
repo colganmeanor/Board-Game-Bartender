@@ -6,6 +6,7 @@ export const addFavoriteDrink = (drink) => {
 }
 
 export const removeFavoriteDrink = (drink) => {
+    console.log(drink)
     return {
         type: 'REMOVE_FAVORITE_DRINK',
         payload: drink
