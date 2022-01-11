@@ -72,3 +72,13 @@
     width: 100%; 
     
 }
+
+.error-message-pair-form {
+    background-color: white;
+    color: red;
+    font-size: 16px;
+    border-radius: 10px;
+    font-family: 'Julius Sans One';
+    width: 100%;
+    padding: 2%;
+}

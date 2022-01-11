@@ -35,7 +35,7 @@ const App = () => {
         <Header />
       <main className='landing-page'>
         {error ?
-          <p className='error-message'>Sorry, there's been an error: '{error}'</p> :
+          <p className='error-message-home'>Sorry, there's been an error: '{error}'</p> :
           <Routes>
             <Route path='/' element={games ? <PairingForm /> : <Loading />} />
             <Route path='/:gameId/:drinkId' element={<PairedPage />} />

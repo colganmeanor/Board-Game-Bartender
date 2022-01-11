@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { setGameName } from '../redux/actions/boardGame'
 import { setLiquorType } from '../redux/actions/liquorSearch'
@@ -9,7 +9,8 @@ import apiCalls from '../apiCalls'
 const PairingForm = () => {
 
     const dispatch = useDispatch()
-    let navigate = useNavigate();
+    let navigate = useNavigate()
+    const [error, setError] = useState('')
 
     const games = useSelector(state => state.boardGame.allGamesData.games)
     const type = useSelector(state => state.liquorSearch.liquorSearchWord)
@@ -25,10 +26,14 @@ const PairingForm = () => {
         event.preventDefault()
         apiCalls.getDrinkByType(type)
             .then(data => {
-                let randomNum = Math.floor(Math.random() * data.drinks.length)
-                const drinkObj = data.drinks[randomNum]
-                const gameObj = games.find(game => game.name === gameName)
-                navigate(`/${gameObj.id}/${drinkObj.idDrink}`)
+                if (data.drinks) {
+                    let randomNum = Math.floor(Math.random() * data.drinks.length)
+                    const drinkObj = data.drinks[randomNum]
+                    const gameObj = games.find(game => game.name === gameName)
+                    navigate(`/${gameObj.id}/${drinkObj.idDrink}`)
+                } else {
+                    setError(data.message)
+                }
             })
     }
 
@@ -61,8 +66,9 @@ const PairingForm = () => {
                     </datalist>
 
                 </label>
-                    <button className='pair-button' onClick={(event) => findRandomDrink(event)}><span>Pair</span></button>
-                    <button className='favorites-button' onClick={() => {navigate('/favorites')}}>Favorites</button>
+                <button className='pair-button' onClick={(event) => findRandomDrink(event)}><span>Pair</span></button>
+                <button className='favorites-button' onClick={() => { navigate('/favorites') }}>Favorites</button>
+                {error && <p className='error-message-pair-form'>Sorry, there's been an error: '{error}'</p>}
             </form>
 
         </div>

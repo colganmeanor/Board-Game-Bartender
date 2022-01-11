@@ -4,13 +4,14 @@
   height: 532px;
 }
 
-.error-message {
+.error-message-home {
   position: fixed;
   height: 50%;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: 'Julius Sans One';
   color: white;
   font-size: 30px;
 }
