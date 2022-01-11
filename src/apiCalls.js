@@ -1,7 +1,19 @@
 const apiCalls = {
 
     getGameData: () => {
-        return fetch('https://api.boardgameatlas.com/api/search?limit=100&pretty=true&client_id=YWBLPm0lyY')
+        return fetch('https://api.boardgameatlas.com/api/search?limit=25&pretty=true&client_id=YWBLPm0lyY')
+            .then(res => {
+                if (res.ok) {
+                    return res.json()
+                } else {
+                    throw new Error()
+                }
+            })
+            .catch(err => err)
+    },
+
+    getSpecificGame: (gameId) => {
+        return fetch(`https://api.boardgameatlas.com/api/search?ids=${gameId}&pretty=true&client_id=YWBLPm0lyY`)
             .then(res => {
                 if (res.ok) {
                     return res.json()

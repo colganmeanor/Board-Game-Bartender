@@ -8,26 +8,24 @@ import { useParams } from 'react-router'
 import apiCalls from '../apiCalls'
 import { findGame } from '../redux/actions/boardGame'
 
-
 const PairedPage = () => {
 
     const { gameId, drinkId } = useParams()
-    const [error, setError] = useState('')
+    const [ error, setError ] = useState('')
 
     const dispatch = useDispatch()
 
     const game = useSelector(state => state.boardGame.currentGame)
     const currentDrink = useSelector(state => state.favoriteDrinks.currentDrink)
 
-    const findSpecificGame = (list) => {
-        return list.find(game => game.id === gameId)
-    }
-
     useEffect(() => {
-        apiCalls.getGameData()
+        apiCalls.getSpecificGame(gameId)
             .then(data => {
-                const gameObj = findSpecificGame(data.games)
-                dispatch(findGame(gameObj))
+                if (data.games) {
+                    dispatch(findGame(data.games[0]))
+                } else {
+                    setError(data.message)
+                }
             })
         apiCalls.getSpecificDrink(drinkId)
             .then(data => {
@@ -41,18 +39,18 @@ const PairedPage = () => {
 
     return (
         <section>
-            {error ? <p className='error-message-pair-page'>Sorry, there's been an error: '{error}'</p> :
+            { error ? <p className='error-message-pair-page'>Sorry, there's been an error: '{error}'</p> :
                 <main className="paired-page">
                     <h2 className='perfect-pairing-title'>Your Perfect Pairing!</h2>
-                    <div className='paired-components'>
-                        {game && <Game />}
-                        <p className='plus-sign'>+</p>
-                        {currentDrink && <Drink />}
-                    </div>
+                        <div className='paired-components'>
+                            {game && <Game />}
+                            <p className='plus-sign'>+</p>
+                            {currentDrink && <Drink />}
+                        </div>
                     <button className='add-favorite-button' onClick={() => { dispatch(addFavoriteDrink(currentDrink)) }}>Add Drink to Favorites!</button>
                 </main>
             }
-        </section>
+        </section >
     )
 }
 

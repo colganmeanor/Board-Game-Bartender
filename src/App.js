@@ -15,7 +15,7 @@ const App = () => {
 
   const dispatch = useDispatch()
 
-  const [error, setError] = useState('')
+  const [ error, setError ] = useState('')
 
   const games = useSelector(state => state.boardGame.allGamesData.games)
 
@@ -34,7 +34,7 @@ const App = () => {
     <div>
         <Header />
       <main className='landing-page'>
-        {error ?
+        { error ?
           <p className='error-message-home'>Sorry, there's been an error: '{error}'</p> :
           <Routes>
             <Route path='/' element={games ? <PairingForm /> : <Loading />} />

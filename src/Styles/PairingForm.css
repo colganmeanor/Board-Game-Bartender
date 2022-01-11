@@ -80,5 +80,6 @@
     border-radius: 10px;
     font-family: 'Julius Sans One';
     width: 100%;
-    padding: 2%;
+    padding: 2% 0;
+    text-align: center;
 }

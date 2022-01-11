@@ -10,7 +10,7 @@ const PairingForm = () => {
 
     const dispatch = useDispatch()
     let navigate = useNavigate()
-    const [error, setError] = useState('')
+    const [ error, setError ] = useState('')
 
     const games = useSelector(state => state.boardGame.allGamesData.games)
     const type = useSelector(state => state.liquorSearch.liquorSearchWord)
@@ -66,9 +66,9 @@ const PairingForm = () => {
                     </datalist>
 
                 </label>
+                { error && <p className='error-message-pair-form'>Oops, '{error}'</p>}
                 <button className='pair-button' onClick={(event) => findRandomDrink(event)}><span>Pair</span></button>
                 <button className='favorites-button' onClick={() => { navigate('/favorites') }}>Favorites</button>
-                {error && <p className='error-message-pair-form'>Sorry, there's been an error: '{error}'</p>}
             </form>
 
         </div>
