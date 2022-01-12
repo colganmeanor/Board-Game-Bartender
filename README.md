@@ -1,15 +1,19 @@
 # Board Game Bartender - Stretch Tech Project by Michele Comfort, Joan Rasmussen and Colgan Meanor
 Mod3 2108 FE
 
+<img width="1301" alt="Screen Shot 2022-01-11 at 3 36 20 PM" src="https://user-images.githubusercontent.com/87510749/149184370-cfc68f1a-0f3b-444b-b788-da2618d0d869.png">
+
+
 ## Table of Contents
-  - [Install + Setup](#set-up)  
+  - [Install + Setup](#set-up)
+  - [Project Specs](#project-specs)  
   - [Abstract](#abstract)
   - [Architecture](#architecture)
   - [Technologies](#technologies)
   - [Contributors](#contributors)
   - [Wins](#wins)
   - [Challenges + Improvements](#challenges-+-Improvements)
-  - [Project Specs](#project-specs)
+  
 
 ## Install + Setup
   - clone this repo: [here](https://github.com/colganmeanor/Board-Game-Bartender)
@@ -24,7 +28,27 @@ Mod3 2108 FE
 
 ## Abstract
 
+  ![game-liquor-search](https://user-images.githubusercontent.com/87510749/149183920-40072a50-2986-474e-8518-8ada172b7806.gif)
+
+
   Board Game Bartender is a web application designed to help suggest cocktails for game nights with friends. The app makes use of two public APIs ([Board Game Atlas](https://www.boardgameatlas.com/api/docs/) and [TheCocktailDB](https://www.thecocktaildb.com/api.php)) that allow the user to search for their desired Game, and choose a liquor type. Once these choices have been made, the user can click a 'Pair' button on the page to be shown a random cocktail made from their liquor of choice, along with ingredients required to make the cocktail. In addition to discovering unique and new cocktails, the app also allows the user to save their favorite drinks and view them again on the 'Favorites' page. 
+  
+  **Favoriting Drink**:
+  
+  ![favoriting-drink](https://user-images.githubusercontent.com/87510749/149183987-81db401a-c720-40c1-8bdd-74fbf92ce7b0.gif)
+
+  **Removing a Favorite Drink**:
+  
+  ![remove-drink](https://user-images.githubusercontent.com/87510749/149184146-a98330c6-2b3a-4a86-b690-7bc8b5b2f9e7.gif)
+  
+  **Mobile Responsive Views**:
+  
+  <img width="229" alt="Screen Shot 2022-01-11 at 3 36 04 PM" src="https://user-images.githubusercontent.com/87510749/149184507-bd360367-933c-4a4b-bc21-535a1c48176d.png">
+  
+  <img width="205" alt="Screen Shot 2022-01-11 at 3 35 47 PM" src="https://user-images.githubusercontent.com/87510749/149184562-11170e5d-3a4a-422c-9ae1-1e56615c269f.png">
+
+    
+
 
 ## Architecture
 
