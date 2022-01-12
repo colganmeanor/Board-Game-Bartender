@@ -1,75 +1,95 @@
-# Getting Started with Create React App
+# Board Game Bartender - Stretch Tech Project by Michele Comfort, Joan Rasmussen and Colgan Meanor
+Mod3 2108 FE
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<img width="1301" alt="Screen Shot 2022-01-11 at 3 36 20 PM" src="https://user-images.githubusercontent.com/87510749/149184370-cfc68f1a-0f3b-444b-b788-da2618d0d869.png">
 
-## Available Scripts
 
-In the project directory, you can run:
+## Table of Contents
+  - [Install + Setup](#set-up)
+  - [Project Specs](#project-specs)  
+  - [Abstract](#abstract)
+  - [Architecture](#architecture)
+  - [Technologies](#technologies)
+  - [Contributors](#contributors)
+  - [Wins](#wins)
+  - [Challenges + Improvements](#challenges-+-Improvements)
+  
 
-### `npm start`
+## Install + Setup
+  - clone this repo: [here](https://github.com/colganmeanor/Board-Game-Bartender)
+   - On the command line, type: **$ npm install**
+   - On the command line, type: **$ npm start**
+   - The app will run on port 3000.
+   - Visit (http://localhost:3000/) in your browser. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Project Specs
+   - The project spec & rubric can be found [here](https://frontend.turing.edu/projects/module-3/stretch.html)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## Abstract
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  ![game-liquor-search](https://user-images.githubusercontent.com/87510749/149183920-40072a50-2986-474e-8518-8ada172b7806.gif)
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  Board Game Bartender is a web application designed to help suggest cocktails for game nights with friends. The app makes use of two public APIs ([Board Game Atlas](https://www.boardgameatlas.com/api/docs/) and [TheCocktailDB](https://www.thecocktaildb.com/api.php)) that allow the user to search for their desired Game, and choose a liquor type. Once these choices have been made, the user can click a 'Pair' button on the page to be shown a random cocktail made from their liquor of choice, along with ingredients required to make the cocktail. In addition to discovering unique and new cocktails, the app also allows the user to save their favorite drinks and view them again on the 'Favorites' page. 
+  
+  **Favoriting Drink**:
+  
+  ![favoriting-drink](https://user-images.githubusercontent.com/87510749/149183987-81db401a-c720-40c1-8bdd-74fbf92ce7b0.gif)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  **Removing a Favorite Drink**:
+  
+  ![remove-drink](https://user-images.githubusercontent.com/87510749/149184146-a98330c6-2b3a-4a86-b690-7bc8b5b2f9e7.gif)
+  
+  **Mobile Responsive Views**:
+  
+  <img width="229" alt="Screen Shot 2022-01-11 at 3 36 04 PM" src="https://user-images.githubusercontent.com/87510749/149184507-bd360367-933c-4a4b-bc21-535a1c48176d.png">
+  
+  <img width="205" alt="Screen Shot 2022-01-11 at 3 35 47 PM" src="https://user-images.githubusercontent.com/87510749/149184562-11170e5d-3a4a-422c-9ae1-1e56615c269f.png">
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Architecture
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+  As mentioned above, the data necessary for Board Game Bartender comes from the following APIs: [Board Game Atlas](https://www.boardgameatlas.com/api/docs/) and [TheCocktailDB](https://www.thecocktaildb.com/api.php). Our application takes advantage of React Redux's Global State Management tools to store the data fetched from our APIs and distribute it accordingly to the necessary components. 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+  On page load, the game data is fetched and stored in the global state. When the user is selecting their liquor of choice, the application is performing initial fetch calls in preparation of providing a unique cocktail to the user. Once the user has selected their choice of liquor and game and clicks the 'Pair' button, the application looks through a list of fetched drinks that match the liquor type chosen by the user and randomly selects the cocktail it will show to the user. 
+  
+  While loading the paired game and cocktail result page, the application performs one more series of fetch calls to make sure that it has the full information necessary for the chosen game and cocktail, such as recommended players and playtime for the game, and ingredients for the cocktail, which all get displayed on the page. The application also takes advantage of Redux's store to allow a user to save and remove cocktails to a favorite's page.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+## Technologies
+  - React Framework
+  - React Router
+  - React Redux
+  - Cypress Testing Framework
+  - Javascript
+  - CSS HTML
+  - VSCode
+  - Git Version Control / GitHub
+  - Google Chrome or Web Browser of User's Choice
+  - Mac OS Terminal/Command Line
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Contributors
+  - [Michele Comfort](https://github.com/michelecomfort)
+  - [Joan Rasmussen](https://github.com/raz-joan)
+  - [Colgan Meanor](https://github.com/colganmeanor)
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Wins
+  - Successfully conceptualized and designed the entire application from idea/planning stage to completion. 
+  - Successfully built a React based application that utilizes Redux
+  - Successfully managed data in Redux Store from two different API endpoints. 
+  - Tons of shared knowledge opportunities with this group in regards to best practices with GitHub, VSCode, Figma, and everything in between.
+  - Application meets the MVP functionality we originally set out to meet. 
+  - Beautiful and responsive layout for the application. 
+  
+  
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
-### Authors
-Joan Rasmussen
-Michele Comfort
-Colgan Meanor
+## Challenges + Improvements
+  - Coming up with application ideas is difficult! It took us a lot longer than we imagined it would to come up with our own idea (and to find the perfect publicly available APIs).
+  - We had some difficulty when it came to implementing Router with our previously implemented asynchronous javascript fetch calls and functions that organized our data. It felt like a real blocker for the few hours that we worked on it. After taking the night to think about it, we came in fresh the next morning and were able to implement a solution for our issues within an hour of our team standup. It felt like a huge win after a big challenge. Sometimes you just have to walk away from the code for the night.
+  - Learning Redux was a challenge for this group. But it was exciting to get to learn from each other, and support our learning of global state management working together on the project. 
+  - There are always compromises when building an application in such a short time table. As always, the application starts out more ambitious than it ends up being. We had tons of ideas that didn't make it into the final product, but would always be cool to revisit later. It's important to know when to make those calls, and we felt like we made good calls along the way to deliver our MVP.
