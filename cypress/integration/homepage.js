@@ -140,7 +140,7 @@ describe('Board Game Bartender Home Page', () => {
 
     it('should have the correct options for the liquor datalist', () => {
         cy.get('#liquors option')
-            .should('have.length', 8)
+            .should('have.length', 7)
 
         cy.get('#liquors option').eq(0)
             .should('have.value', 'Vodka')
@@ -162,9 +162,6 @@ describe('Board Game Bartender Home Page', () => {
 
         cy.get('#liquors option').eq(6)
             .should('have.value', 'Scotch')
-
-        cy.get('#liquors option').eq(7)
-            .should('have.value', 'Non Alcoholic')
     })
 
     it('should reflect the correct value when typing in the game dropdown', () => {

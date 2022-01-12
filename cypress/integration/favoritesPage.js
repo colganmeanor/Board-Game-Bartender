@@ -1,7 +1,6 @@
 describe('Board Game Bartender Favorites Page', () => {
     it('should take users to landing page', () => {
         cy.visit('http://localhost:3000')
-        cy.request('https://api.boardgameatlas.com/api/search?name=Catan&pretty=true&client_id=JLBr5npPhV')
     })
 
     it('should allow users to enter their game and liquor preferences to make a pairing', () => {
@@ -14,12 +13,13 @@ describe('Board Game Bartender Favorites Page', () => {
         cy.wait(3000)
         cy.get('[data-cy=favorites-button]').click()
         cy.go('back')
-        cy.get('[data-cy=game-choice]').type('Catan: Cities & Knights')
+        cy.get('[data-cy=game-choice]').type('Wingspan')
         cy.get('[data-cy=liquor-choice]').type('Tequila')
         cy.get('[data-cy=pair-button]').click()
-        cy.wait(3000)
+        cy.wait(5000)
         cy.get('[data-cy=favorites-button]').click()
         cy.go('back')
+        cy.wait(2000)
         cy.get('[data-cy=favorites-page-button]').click()
     })
 

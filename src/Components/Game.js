@@ -12,7 +12,7 @@ const Game = () => {
 
     return (
         <div aria-label="Chosen Game Result" className="paired-component">
-            <h3 className='game-name'>{gameObj.name}</h3>
+            <h3 className='game-name' data-cy='game-name'>{gameObj.name}</h3>
             <section aria-label="Game Information" className='game-info'>
                 <img alt={`${gameObj.name} image`} className="game-image" src={gameObj.image_url} /> 
                 <aside aria-label="Game Players and Play Time" className='game-specs'>
