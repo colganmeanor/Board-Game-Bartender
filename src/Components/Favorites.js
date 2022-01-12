@@ -12,12 +12,12 @@ const Favorites = () => {
     const drinks = favoriteDrinks.map(drink => {
         if (favoriteDrinks) {
             return (
-                <div className='fav-drink-card' data-cy='favorite-card'>
-                    <div className='left-side-card'>
+                <div aria-label={`${drink.strDrink} Favorite Card`} className='fav-drink-card' data-cy='favorite-card'>
+                    <div aria-label= "Drink Image and Removal Button" className='left-side-card'>
                         <h3 className='fav-drink-name'>{drink.strDrink}</h3>
-                        <button className='remove-button' data-cy='remove-button' onClick={() => dispatch(removeFavoriteDrink(drink.idDrink))}>Remove</button>
+                        <button aria-label={`Remove ${drink.strDrink} from Favorite Drinks`} className='remove-button' data-cy='remove-button' onClick={() => dispatch(removeFavoriteDrink(drink.idDrink))}>Remove</button>
                     </div>
-                        <img className='fav-drink-image' src={drink.strDrinkThumb}/>    
+                        <img alt={`${drink.strDrink} image`} className='fav-drink-image' src={drink.strDrinkThumb}/>    
                 </div>
             )
         } 
@@ -27,9 +27,9 @@ const Favorites = () => {
     return (
         <div>
             <NavLink to={'/'} style={{textDecoration: 'none'}}>
-                <button className='favorites-return-button' data-cy='favorite-return-button'>Return to Main</button>   
+                <button aria-label="Return to Main Page" className='favorites-return-button' data-cy='favorite-return-button'>Return to Main</button>   
             </NavLink>
-            <div className='favorites-grid' data-cy='fav-drinks-grid'>
+            <div aria-label="Favorite Drink Section" className='favorites-grid' data-cy='fav-drinks-grid'>
                 {drinks}
             </div>
         </div>

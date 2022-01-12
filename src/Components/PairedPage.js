@@ -43,14 +43,14 @@ const PairedPage = () => {
             { error ? <p className='error-message-pair-page'>Sorry, there's been an error: '{error}'</p> :
                 <main className="paired-page">
                     <h2 className='perfect-pairing-title'>Your Perfect Pairing!</h2>
-                    <div className='paired-components'>
+                    <div aria-label="Paired Drink and Game Results" className='paired-components'>
                         {game && <Game />}
                         <p className='plus-sign'>+</p>
                         {currentDrink && <Drink />}
                     </div>
-                    <div className='bottom-buttons'>
+                    <div aria-label="bottom button section" className='bottom-buttons'>
                         <NavLink to={'/'} style={{ textDecoration: 'none' }}>
-                            <button className='return-button'>Return to Main</button>
+                            <button aria-label="Return to Main Page" className='return-button'>Return to Main</button>
                         </NavLink>
                         <button className='add-favorite-button' data-cy='favorites-button' onClick={() => { dispatch(addFavoriteDrink(currentDrink)) }}>Add Drink to Favorites!</button>
                     </div>
