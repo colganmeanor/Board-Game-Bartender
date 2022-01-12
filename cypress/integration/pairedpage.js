@@ -20,11 +20,12 @@ describe('Board Game Bartender Paired Page DOM', () => {
 
     it('should allow the user to refresh the page and see the same information as before', () => {
         cy.reload()
+            .wait(2000)
 
-        .get('h3')
+        .get('[data-cy=game-name]')
         .contains('Starfarers of Catan')
 
-        .get('h3')
+        .get('[data-cy=drink-name]')
         .contains('Damned if you do')
     })
     
@@ -42,7 +43,7 @@ describe('Board Game Bartender Paired Page DOM', () => {
           
           .wait(1000)
           
-          .get('h3')
+          .get('[data-cy=game-name]')
           .contains('Catan')
 
           .get('p')
@@ -51,32 +52,35 @@ describe('Board Game Bartender Paired Page DOM', () => {
 
     it('should allow the user to visit a specific URL and see data based on the URL path', () => {
         cy.visit('http://localhost:3000/RCDJAQKpLn/11013')
-        
-        .get('h3')
+            .wait(4000)
+            
+        .get('[data-cy=game-name]')
         .contains('Catan: 3D Edition')
 
-        .get('h3')
+        .get('[data-cy=drink-name]')
         .contains('Alaska Cocktail')
     })
     
 
     it('should allow the user to use the back and forward buttons and retain the same info', () => {
         cy.visit('http://localhost:3000/qiJzLWCvPB/178322')
+            .wait(2000)
 
-        .get('h3')
+        .get('[data-cy=game-name]')
         .contains('Catan: Explorers & Pirates')
 
-        .get('h3')
+        .get('[data-cy=drink-name]')
         .contains('Spice 75')
 
         .visit('http://localhost:3000/')
 
         .go('back')
+            .wait(2000)
 
-        .get('h3')
+        .get('[data-cy=game-name]')
         .contains('Catan: Explorers & Pirates')
 
-        .get('h3')
+        .get('[data-cy=drink-name]')
         .contains('Spice 75')
     })
     
