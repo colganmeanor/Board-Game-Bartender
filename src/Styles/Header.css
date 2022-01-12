@@ -1,6 +1,7 @@
 .heading-section,
 .title,
-.slogan {
+.slogan,
+.slogan-icon {
     display: flex;
 }
 
@@ -21,8 +22,7 @@
 .slogan {
     font-family: 'Oooh Baby';
     font-size: 320%;
-    margin-left: 20%;
-    margin-top: 8px;
+    margin: 8px 0 0 20%;
 }
 
 .cocktail-icon {
@@ -31,9 +31,6 @@
     width: 180px;
 }
 
-.slogan-icon {
-    display: flex;
-}
 
 @media screen and (max-width: 1232px) {
     .title {
