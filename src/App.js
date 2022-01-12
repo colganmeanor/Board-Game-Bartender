@@ -33,7 +33,7 @@ const App = () => {
 
   return (
     <div>
-        <Header />
+      <Header />
       <main className='landing-page'>
         { error ?
           <p className='error-message-home'>Sorry, there's been an error: '{error}'</p> :
@@ -43,7 +43,7 @@ const App = () => {
             <Route path='/favorites' element={<Favorites />} />
           </Routes>
         }
-        </main>
+      </main>
     </div>
   );
 }

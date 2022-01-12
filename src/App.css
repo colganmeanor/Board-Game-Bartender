@@ -1,6 +1,10 @@
-.landing-page {
+body {
+  height: 100vh;
   background-color: #19435A;
-  height: 532px;
+}
+
+.landing-page {
+  height: 70%;
 }
 
 .error-message-home {
