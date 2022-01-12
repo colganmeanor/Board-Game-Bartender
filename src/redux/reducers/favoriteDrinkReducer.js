@@ -6,9 +6,14 @@ const initialState = {
 export const favoriteDrinksReducer = (state = initialState, action) => {
     switch (action.type) {
         case 'ADD_FAVORITE_DRINK':
-            return {
-                ...state,
-                favoriteDrinks: [...state.favoriteDrinks, action.payload]
+            const foundDrink = state.favoriteDrinks.find(drink => drink.idDrink === action.payload.idDrink)
+            if (state.favoriteDrinks.includes(foundDrink)) {
+                return state
+            } else {
+                return {
+                    ...state,
+                    favoriteDrinks: [...state.favoriteDrinks, action.payload]
+                }
             }
         case 'REMOVE_FAVORITE_DRINK':
             const updatedArray = state.favoriteDrinks.filter((drink) => {

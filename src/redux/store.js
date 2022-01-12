@@ -9,7 +9,12 @@ const rootReducers = {
     boardGame: boardGameReducer
 }
 
-const store = createStore(combineReducers(rootReducers), window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+const storedState = localStorage.getItem('globalState') ? JSON.parse(localStorage.getItem('globalState')) : {}
+
+const store = createStore(combineReducers(rootReducers), storedState)
+
+store.subscribe(() => {
+    localStorage.setItem('globalState', JSON.stringify(store.getState()))
+})
 
 export default store
-
