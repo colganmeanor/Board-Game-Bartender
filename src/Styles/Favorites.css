@@ -1,6 +1,6 @@
 .favorites-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
 }
 .fav-drink-card {
     align-items: center;
@@ -10,7 +10,7 @@
     display: flex;
     justify-content: space-betweengit ;
     margin: 4% auto 0;
-    width: 26vw;
+    width: 335px;
 }
 
 .fav-drink-name {
