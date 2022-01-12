@@ -13,7 +13,7 @@ const Game = () => {
     return (
         <div aria-label="Chosen Game Result" className="paired-component">
             <h3 className='game-name'>{gameObj.name}</h3>
-            <section className='game-info'>
+            <section aria-label="Game Information" className='game-info'>
                 <img className="game-image" src={gameObj.image_url} /> 
                 <aside className='game-specs'>
                     <p>Players: {gameObj.min_players} - {gameObj.max_players}</p>
