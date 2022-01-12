@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/board-game-bartender/static/css/main.8840ed75.css",
-    "main.js": "/board-game-bartender/static/js/main.1f5461a3.js",
-    "static/js/787.a718e0d0.chunk.js": "/board-game-bartender/static/js/787.a718e0d0.chunk.js",
-    "static/media/cocktail-glasses.png": "/board-game-bartender/static/media/cocktail-glasses.05234109604e8adc4908.png",
-    "static/media/games-drinks-friends.jpeg": "/board-game-bartender/static/media/games-drinks-friends.0693d982f10293686bf4.jpeg",
-    "index.html": "/board-game-bartender/index.html",
-    "main.8840ed75.css.map": "/board-game-bartender/static/css/main.8840ed75.css.map",
-    "main.1f5461a3.js.map": "/board-game-bartender/static/js/main.1f5461a3.js.map",
-    "787.a718e0d0.chunk.js.map": "/board-game-bartender/static/js/787.a718e0d0.chunk.js.map"
+    "main.css": "/Board-Game-Bartender/static/css/main.8840ed75.css",
+    "main.js": "/Board-Game-Bartender/static/js/main.1d837c39.js",
+    "static/js/787.a718e0d0.chunk.js": "/Board-Game-Bartender/static/js/787.a718e0d0.chunk.js",
+    "static/media/cocktail-glasses.png": "/Board-Game-Bartender/static/media/cocktail-glasses.05234109604e8adc4908.png",
+    "static/media/games-drinks-friends.jpeg": "/Board-Game-Bartender/static/media/games-drinks-friends.0693d982f10293686bf4.jpeg",
+    "index.html": "/Board-Game-Bartender/index.html",
+    "main.8840ed75.css.map": "/Board-Game-Bartender/static/css/main.8840ed75.css.map",
+    "main.1d837c39.js.map": "/Board-Game-Bartender/static/js/main.1d837c39.js.map",
+    "787.a718e0d0.chunk.js.map": "/Board-Game-Bartender/static/js/787.a718e0d0.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.8840ed75.css",
-    "static/js/main.1f5461a3.js"
+    "static/js/main.1d837c39.js"
   ]
 }
