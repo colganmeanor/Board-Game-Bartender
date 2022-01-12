@@ -58,9 +58,9 @@ const Drink = () => {
     return (
         <div aria-label="Random Drink Result" className="paired-component">
             <h3 className='drink-name'>{currentDrink.strDrink}</h3>
-            <section className='drink-info'>
+            <section aria-label="Drink Information" className='drink-info'>
                 <img alt={`${currentDrink.strDrink} image`} className="drink-image" src={currentDrink.strDrinkThumb} />
-                <aside aria-label="drink ingredients" className='drink-specs'>
+                <aside aria-label="Drink Ingredients" className='drink-specs'>
                     {ingredientsList}
                 </aside>
             </section>
