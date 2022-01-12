@@ -1,23 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import React,  { useEffect, useState } from 'react'
+import './App.css'
+import { useDispatch, useSelector } from 'react-redux'
+import { loadGameData } from './redux/actions/boardGame'
+import PairingForm from './Components/PairingForm'
+import PairedPage from './Components/PairedPage'
+import Header from './Components/Header'
+import Loading from './Components/Loading'
+import { Routes, Route } from 'react-router-dom'
+import apiCalls from './apiCalls'
+import Favorites from './Components/Favorites'
+
+
+const App = () => {
+
+  const dispatch = useDispatch()
+
+  const [ error, setError ] = useState('')
+
+  const games = useSelector(state => state.boardGame.allGamesData.games)
+
+  useEffect(() => {
+    apiCalls.getGameData()
+      .then(data => {
+        if (data.games) {
+          dispatch(loadGameData(data))
+        } else {
+          setError(data.message)
+        }
+      })
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header />
+      <main className='landing-page'>
+        { error ?
+          <p className='error-message-home'>Sorry, there's been an error: '{error}'</p> :
+          <Routes>
+            <Route path='/' element={games ? <PairingForm /> : <Loading />} />
+            <Route path='/:gameId/:drinkId' element={<PairedPage />} />
+            <Route path='/favorites' element={<Favorites />} />
+          </Routes>
+        }
+      </main>
     </div>
   );
 }

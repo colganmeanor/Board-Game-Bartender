@@ -1,0 +1,90 @@
+.paired-page,
+.paired-components,
+.error-message-pair-page,
+.bottom-buttons {
+    display: flex;
+}
+
+.paired-page {
+    align-items: center;
+    background-color: #19435A; 
+    flex-direction: column;
+    height: auto;
+    justify-content: center;
+    width: auto;
+}
+
+.paired-components {
+    flex-direction: row;
+    justify-content: space-around;
+    width: 90%;
+}
+
+.perfect-pairing-title {
+    color: white;
+    font-family: 'Oooh Baby';
+    font-size: 72px;
+    margin: 10px 0 24px 0;
+}
+
+.add-favorite-button,
+.return-button {
+    background-color: teal;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px 1px #000000;
+    color: white;
+    font-size: 24px;
+    height: 64px;
+    margin: 1.6% 3% 1%;
+    transition: all .2s ease-in-out;
+    width: 200px;
+}
+
+.add-favorite-button:hover,
+.return-button:hover {
+    background-color: white;
+    color: #008080;
+    font-weight: 600;
+    transform: scale(1.2);
+}
+
+.plus-sign {
+    color: white;
+    font-size: 48px;
+    margin: auto 1%;
+}
+
+.error-message-pair-page,
+.add-favorite-button,
+.return-button {
+    font-family: 'Julius Sans One';
+}
+
+.error-message-pair-page {
+    align-items: center;
+    color: white;
+    height: 50%;
+    font-size: 30px;
+    justify-content: center;
+    position: fixed;
+    width: 100%;
+}
+
+.return-button {
+    margin-top: 3%;
+}
+
+@media screen and (max-width: 620px) {
+    .paired-components {
+        flex-direction: column;
+        align-items: center;
+        width: 80%;
+    }  
+}
+
+@media screen and (max-width: 460px) {
+    .bottom-buttons {
+        flex-direction: column;
+    }
+}

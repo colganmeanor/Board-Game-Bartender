@@ -1,0 +1,38 @@
+.drink-image {
+    border-radius: 50%;;
+    padding: 2.4%;
+    width: 180px;
+}
+
+.drink-name {
+    font-family: 'Julius Sans One';
+    font-size: 32px;
+    margin: 12px auto;
+    text-align: center;
+}
+
+.drink-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.drink-specs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    line-height: 0;
+}
+
+@media screen and (max-width: 800px) {
+    .paired-component {
+        height: auto;
+        width: 80%;
+    }
+
+    .drink-info {
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,11 @@
+.loading-container {
+    position: fixed;
+    height: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: 'Julius Sans One';
+    font-size: 24px;
+}   
