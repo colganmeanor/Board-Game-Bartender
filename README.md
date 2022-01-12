@@ -1,6 +1,8 @@
 # Board Game Bartender - Stretch Tech Project by Michele Comfort, Joan Rasmussen and Colgan Meanor
 Mod3 2108 FE
 
+Deployed project: [here](https://colganmeanor.github.io/Board-Game-Bartender/)
+
 <img width="1301" alt="Screen Shot 2022-01-11 at 3 36 20 PM" src="https://user-images.githubusercontent.com/87510749/149184370-cfc68f1a-0f3b-444b-b788-da2618d0d869.png">
 
 
