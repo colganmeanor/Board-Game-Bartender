@@ -5,8 +5,9 @@
 }
 
 .heading-section {
+    background-color: white;
     flex-direction: column;
-    height: 232px;
+    height: 30%;
 }
 
 .title {
