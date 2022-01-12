@@ -42,8 +42,8 @@ const PairingForm = () => {
             <div className='circular-image'>
                 <img alt="Group of friends sitting at a table playing Jenga and drinking beers" src={require('../assets/games-drinks-friends.jpeg')} />
             </div>
-            <form aria-label="Choose Your Game and Liquor" className='game-liquor-input pairing-form' data-cy='pairing-form'>
-                <label htmlFor='game-choice' data-cy='pairing-form' className='game-input'>
+            <form aria-label="Choose Your Game and Liquor" className='game-liquor-input pairing-form' data-cy='pairing-form' title='Game and Liquor Form'>
+                <label htmlFor='game-choice' data-cy='pairing-form' className='game-input' title='Game Input'>
                     <input aria-required="true" className='game-dropdown' data-cy='game-choice' id='game-choice' placeholder='Choose Your Game!' list='games' onChange={(event) => dispatch(setGameName(event.target.value))}/>
                         <datalist id='games'>
                             {gameNames}
@@ -59,7 +59,6 @@ const PairingForm = () => {
                         <option value='Bourbon' />
                         <option value='Tequila' />
                         <option value='Scotch' />
-                        <option value='Non Alcoholic' />
                     </datalist>
                 </label>
                     <button aria-label="Pair" className='pair-button' data-cy='pair-button' onClick={(event) => findRandomDrink(event)}><span>Pair</span></button>
