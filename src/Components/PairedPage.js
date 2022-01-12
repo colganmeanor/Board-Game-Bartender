@@ -7,7 +7,7 @@ import { addFavoriteDrink, storeCurrentDrink } from '../redux/actions/favoriteDr
 import { useParams } from 'react-router'
 import apiCalls from '../apiCalls'
 import { findGame } from '../redux/actions/boardGame'
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const PairedPage = () => {
 
@@ -49,9 +49,9 @@ const PairedPage = () => {
                         {currentDrink && <Drink />}
                     </div>
                     <div aria-label="bottom button section" className='bottom-buttons'>
-                        <NavLink to={'/'} style={{ textDecoration: 'none' }}>
+                        <Link to={'/'} style={{ textDecoration: 'none' }}>
                             <button aria-label="Return to Main Page" className='return-button'>Return to Main</button>
-                        </NavLink>
+                        </Link>
                         <button className='add-favorite-button' data-cy='favorites-button' onClick={() => { dispatch(addFavoriteDrink(currentDrink)) }}>Add Drink to Favorites!</button>
                     </div>
                 </main>

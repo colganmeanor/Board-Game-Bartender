@@ -56,7 +56,7 @@ const Drink = () => {
     })
 
     return (
-        <div aria-label="Random Drink Result" className="paired-component">
+        <div aria-label="Random Drink Result" className="paired-component" key={currentDrink.idDrink}>
             <h3 className='drink-name'>{currentDrink.strDrink}</h3>
             <section aria-label="Drink Information" className='drink-info'>
                 <img alt={`${currentDrink.strDrink} image`} className="drink-image" src={currentDrink.strDrinkThumb} />
@@ -66,7 +66,6 @@ const Drink = () => {
             </section>
         </div>
     )
-
 }
 
 export default Drink
