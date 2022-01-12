@@ -15,7 +15,7 @@ const Game = () => {
             <h3 className='game-name'>{gameObj.name}</h3>
             <section aria-label="Game Information" className='game-info'>
                 <img alt={`${gameObj.name} image`} className="game-image" src={gameObj.image_url} /> 
-                <aside className='game-specs'>
+                <aside aria-label="Game Players and Play Time" className='game-specs'>
                     <p>Players: {gameObj.min_players} - {gameObj.max_players}</p>
                     <p>Average Play Time: {avgGameTime} mins</p>
                 </aside>
