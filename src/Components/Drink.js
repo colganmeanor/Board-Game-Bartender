@@ -60,7 +60,7 @@ const Drink = () => {
             <h3 className='drink-name'>{currentDrink.strDrink}</h3>
             <section className='drink-info'>
                 <img alt={`${currentDrink.strDrink} image`} className="drink-image" src={currentDrink.strDrinkThumb} />
-                <aside className='drink-specs'>
+                <aside aria-label="drink ingredients" className='drink-specs'>
                     {ingredientsList}
                 </aside>
             </section>
