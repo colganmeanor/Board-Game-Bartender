@@ -7,10 +7,8 @@
     width: 600px;
 }
 
-
 .game-image {
     max-height: 180px;
-    margin-left: 36px;
     max-width: 160px;
     min-width: 160px; 
     padding: 1% 3%;
@@ -20,17 +18,29 @@
     font-family: 'Julius Sans One';
     font-size: 32px;
     margin: 12px auto;
-    max-width: 88%;
     text-align: center;
 }
 
 .game-info {
-    align-items: center;
     display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .game-specs {
     display: flex;
     flex-direction: column;
-    margin-left: 60px;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (max-width: 800px) {
+    .paired-component {
+        height: auto;
+        width: 80%;
+    }
+
+    .game-info {
+        flex-direction: column;
+    }
 }
