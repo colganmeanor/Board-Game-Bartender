@@ -15,9 +15,9 @@ const Favorites = () => {
                 <div aria-label={`${drink.strDrink} Favorite Card`} className='fav-drink-card' data-cy='favorite-card'>
                     <div className='left-side-card'>
                         <h3 className='fav-drink-name'>{drink.strDrink}</h3>
-                        <button className='remove-button' data-cy='remove-button' onClick={() => dispatch(removeFavoriteDrink(drink.idDrink))}>Remove</button>
+                        <button aria-label={`Remove ${drink.strDrink} from Favorite Drinks`} className='remove-button' data-cy='remove-button' onClick={() => dispatch(removeFavoriteDrink(drink.idDrink))}>Remove</button>
                     </div>
-                        <img className='fav-drink-image' src={drink.strDrinkThumb}/>    
+                        <img alt={`${drink.strDrink} image`} className='fav-drink-image' src={drink.strDrinkThumb}/>    
                 </div>
             )
         } 
