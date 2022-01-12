@@ -59,7 +59,7 @@ const Drink = () => {
         <div aria-label="Random Drink Result" className="paired-component">
             <h3 className='drink-name'>{currentDrink.strDrink}</h3>
             <section className='drink-info'>
-                <img alt="" className="drink-image" src={currentDrink.strDrinkThumb} />
+                <img alt={`${currentDrink.strDrink} image`} className="drink-image" src={currentDrink.strDrinkThumb} />
                 <aside className='drink-specs'>
                     {ingredientsList}
                 </aside>
