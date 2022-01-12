@@ -6,8 +6,9 @@ import '../Styles/PairedPage.css'
 import { addFavoriteDrink, storeCurrentDrink } from '../redux/actions/favoriteDrinkAction'
 import { useParams } from 'react-router'
 import apiCalls from '../apiCalls'
-import { findGame } from '../redux/actions/boardGame'
+import { findGame, setGameName } from '../redux/actions/boardGame'
 import { Link } from 'react-router-dom'
+import { setLiquorType } from '../redux/actions/liquorSearch'
 
 const PairedPage = () => {
 
@@ -18,6 +19,11 @@ const PairedPage = () => {
 
     const game = useSelector(state => state.boardGame.currentGame)
     const currentDrink = useSelector(state => state.favoriteDrinks.currentDrink)
+
+    const clearInputs = () => {
+        dispatch(setLiquorType(''))
+        dispatch(setGameName(''))
+    }
 
     useEffect(() => {
         apiCalls.getSpecificGame(gameId)
@@ -50,7 +56,7 @@ const PairedPage = () => {
                     </div>
                     <div aria-label="bottom button section" className='bottom-buttons'>
                         <Link to={'/'} style={{ textDecoration: 'none' }}>
-                            <button aria-label="Return to Main Page" className='return-button'>Return to Main</button>
+                            <button aria-label="Return to Main Page" className='return-button' onClick={() => {clearInputs()}}>Return to Main</button>
                         </Link>
                         <button className='add-favorite-button' data-cy='favorites-button' onClick={() => { dispatch(addFavoriteDrink(currentDrink)) }}>Add Drink to Favorites!</button>
                     </div>

@@ -51,7 +51,7 @@ const Drink = () => {
 
     const ingredientsList = recipe.ingredients.map((ingredient, index) => {
         return (
-            <p>{`${recipe.measures[index]} ${ingredient}`}</p>
+            <p key={index}>{`${recipe.measures[index]} ${ingredient}`}</p>
         )
     })
 
