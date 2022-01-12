@@ -48,7 +48,7 @@ const PairedPage = () => {
                         <p className='plus-sign'>+</p>
                         {currentDrink && <Drink />}
                     </div>
-                    <div className='bottom-buttons'>
+                    <div aria-label="bottom button section" className='bottom-buttons'>
                         <NavLink to={'/'} style={{ textDecoration: 'none' }}>
                             <button className='return-button'>Return to Main</button>
                         </NavLink>
