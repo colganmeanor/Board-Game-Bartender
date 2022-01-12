@@ -56,11 +56,11 @@ const Drink = () => {
     })
 
     return (
-        <div className="paired-component" key={currentDrink.idDrink}>
+        <div aria-label="Random Drink Result" className="paired-component" key={currentDrink.idDrink}>
             <h3 className='drink-name'>{currentDrink.strDrink}</h3>
-            <section className='drink-info'>
-                <img className="drink-image" src={currentDrink.strDrinkThumb} />
-                <aside className='drink-specs'>
+            <section aria-label="Drink Information" className='drink-info'>
+                <img alt={`${currentDrink.strDrink} image`} className="drink-image" src={currentDrink.strDrinkThumb} />
+                <aside aria-label="Drink Ingredients" className='drink-specs'>
                     {ingredientsList}
                 </aside>
             </section>
